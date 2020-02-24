@@ -10,6 +10,7 @@ footer {
     min-height: 100%;
     position: absolute;
     padding: 1rem 2rem;
+    background-image: url(https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
 }
 .active {
     display: block;
