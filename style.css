@@ -1,16 +1,14 @@
-body {
-    background-color: rgb(168, 122, 139);
-}
+
 footer {
     padding: 0px 0px;
 }
-.page {
+/* .page {
     display: none;
     width: 100%;
     min-height: 100%;
     position: absolute;
     padding: 1rem 2rem;
-}
+} */
 .active {
     display: block;
 }
@@ -33,16 +31,14 @@ h1 {
 li {
     list-style-type: none;
     display: inline;
+    letter-spacing: 2px;
     font-weight: bold;
     padding-top: 13px;
     text-align: center;
-    background: rgb(73, 17, 138);
-    color: rgb(129, 81, 184);
-    border-radius: 30px;
     height: 100px;
     font-family: Candara, Georgia, Times, 'Times New Roman', serif;
     font-size: 30px;
-    width: auto;
+    width: 100px;
 }
 .search-box {
     position: fixed;
