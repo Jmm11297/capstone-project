@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/1f67523d75.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Marco Polo</title>
+</head>
+<body>
+    <h1 class="header">Marco Polo</h1>
+    <div class="page" id="home active">
+        <ul>
+            <li><a class="nav-link" data-jump:="home" href="#home">Home</a></li>
+            <li><a class="nav-link" data-jump="event-map" href="#event-map">Map of Events</a></li>
+            <li><a class="nav-link" data-jump:="event-add" href="#event-add">Add an Event</a></li>
+            <li><a class="nav-link" data-jump:="about-contact" href="#about-contact">About/Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="page" id="event-map">
+        <ul>
+            <li><a class="nav-link" data-jump:="home" href="#home">Home</a></li>
+            <li><a class="nav-link" data-jump:="event-map" href="#event-map">Map of Events</a></li>
+            <li><a class="nav-link" data-jump:="event-add" href="#event-add">Add an Event</a></li>
+            <li><a class="nav-link" data-jump:="about-contact" href="#about-contact">About/Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="page" id="event-add">
+        <ul>
+            <li><a class="nav-link" data-jump:="home" href="#home">Home</a></li>
+            <li><a class="nav-link" data-jump:="event-map" href="#event-map">Map of Events</a></li>
+            <li><a class="nav-link" data-jump:="event-add" href="#event-add">Add an Event</a></li>
+            <li><a class="nav-link" data-jump:="about-contact" href="#about-contact">About/Contact</a></li>
+        </ul>
+    </div>
+    <div class="page" id="about-contact">
+        <ol>
+            <li><a class="nav-link" data-jump:="home" href="#">Home</a></li>
+            <li><a class="nav-link" data-jump:="event-map" href="#">Map of Events</a></li>
+            <li><a class="nav-link" data-jump:="event-add" href="#">Add an Events</a></li>
+            <li><a class="nav-link" data-jump:="about-contact" href="#">About/Contact</a></li>
+        </ol>
+    </div>
+    <img id="homePageImage1" src="https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260">
+    <div class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="Type to Search">
+        <a class="search-btn" href="#">
+            <i class="fas fa-search"></i>
+        </a>
+    </div>
+    <div>
+        <footer class="homePageFooter">
+            <p><a href="#">Home</a></p>
+            <p><a href="#">Map of Events</a></p>
+            <p><a href="#">Add an Event</a></p>
+            <p><a href="#">About/Contact</a></p>
+        </footer>
+    </div>
+    </main>
+<script src="marcopolo.js"></script>
+</body>
+</html>
