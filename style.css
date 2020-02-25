@@ -37,11 +37,9 @@ li {
     letter-spacing: 2px;
     font-weight: bold;
     padding-top: 13px;
-    text-align: center;
-    height: 100px;
+    text-align: center; 
     font-family: Candara, Georgia, Times, 'Times New Roman', serif;
     font-size: 30px;
-    width: 100px;
 }
 .tablink {
     background-color: rgb(124, 97, 173);
@@ -57,7 +55,7 @@ li {
 
 .tablink:hover {
     background-color: rgb(81, 26, 184);
-  }
+}
 .search-box {
     position: fixed;
     top: 50%;
@@ -107,4 +105,5 @@ li {
     font-size: 16px;
     font-family: Candara, Georgia, Times, 'Times New Roman', serif;
     color: ivory;
+    text-decoration: none;
 }
