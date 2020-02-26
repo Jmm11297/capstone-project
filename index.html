@@ -35,6 +35,9 @@
         <button class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</button>
         <button class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</button>
         <footer class="homePageFooter">
+        <div class="map">
+            <h2>Map of Events</h2>
+        </div>
             <p><a href="#home">Home</a></p>
             <p><a href="#event-map">Map of Events</a></p>
             <p><a href="#event-add">Add an Event</a></p>
@@ -50,24 +53,15 @@
         <footer class="homePageFooter">
         <div class="addEventForm">
             <h2>Add an Event</h2>
-            <form action="/action_page.php">
-                <label for="fname">First Name</label>
+            <form class="addform" action="/action_page.php">
                 <input type="text" id="fname" name="firstname" placeholder="First Name">
-                <label for="lname">Last Name</label>
                 <input type="text" id="lname" name="lastname" placeholder="Last Name">
-                <label for="ename">Name of Event</label>
                 <input type="text" id="ename" name="nameofevent" placeholder="Name of Event">
-                <label for="oname">Organization Name</label>
                 <input type="text" id="oname" name="organizationname" placeholder="Organization Name">
-                <label for="date">Start Date of Event</label>
                 <input type="text" id="date" name="startdate" placeholder="Start Date of Event">
-                <label for="time">Time of Event</label>
                 <input type="text" id="time" name="timeofevent" placeholder="Time of Event">
-                <label for="location">Location of Event</label>
                 <input type="text" id="location" name="locationofevent" placeholder="Location of Event">
-                <label for="email">E-mail Address</label>
                 <input type="text" id="email" name="emailaddress" placeholder="E-mail Address">
-                <label for="number">Contact Number</label>
                 <input type="text" id="number" name="phonenumber" placeholder="Contact Number">
             </form>
         </div>

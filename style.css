@@ -4,6 +4,16 @@ body {
     margin: 0;
     font-family: Candara, Georgia, 'Times New Roman', Times, serif;
 }
+a:link, a:active {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover, a:visited {
+    color: rgb(24, 20, 92);
+    text-decoration: none;
+}
+
 .page {
     display: none;
     width: 100%;
@@ -22,7 +32,7 @@ body {
     background-color: #8a688a;
 }
 #event-add {
-    background-color: rgb(128, 109, 158);
+    background-color: rgb(88, 75, 110);
 }
 #about-contact {
     background-color: rgb(104, 69, 82);
@@ -30,6 +40,7 @@ body {
 h1 {
     font-family: Candara, Georgia, Times, 'Times New Roman', serif;
     font-size: 64px;
+    color: rgb(24, 20, 92);
 }
 
 .tablink {
@@ -97,4 +108,17 @@ h1 {
     font-family: Candara, Georgia, Times, 'Times New Roman', serif;
     color: ivory;
     text-decoration: none;
+}
+
+.addEventForm > h2 {
+    text-align: left;
+    font-size: 32px;
+    font-family: Candara, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.addEventForm > .addform {
+    display: flex;
+    flex-direction: column;
+    
 }
