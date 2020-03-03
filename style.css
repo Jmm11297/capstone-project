@@ -5,7 +5,7 @@ body {
     font-family: Candara, Georgia, 'Times New Roman', Times, serif;
 }
 
-.header > a {
+.page > .header > a {
     font-family: Candara, Georgia, Times, 'Times New Roman', serif;
     font-size: 64px;
     color: rgb(255, 255, 255);
@@ -97,14 +97,14 @@ body {
     position: static;
 }
 
-footer > a:link a:active a:visited {
+.footer > p > a:link, a:active, a:visited {
     color: rgb(61, 3, 78);
     text-decoration: none;
     font-size: 32px;
     font-family: Candara, Georgia, Times, 'Times New Roman', serif;
 }
 
-footer > a:hover {
+.footer > p > a:hover {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 32px;
@@ -115,23 +115,27 @@ footer > a:hover {
     text-align: left;
     font-size: 32px;
     font-family: Candara, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(223, 176, 230);
 }
 
-form {
+form.addform > div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    align-content: center;
+    flex: wrap;
     justify-content: space-between;
+    font-size: 24px;
+    color: rgb(223, 176, 230);
 }
 
 .contact {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    align-content: center, space-around;
+    align-content: center;
     justify-content: space-around;
 }
+
 #submit {
     background-color: rgb(58, 56, 56);
     color: rgb(255, 255, 255);
