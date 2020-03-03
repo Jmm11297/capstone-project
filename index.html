@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="page active" id="home">
-    <h1 class="header">Marco Polo</h1>
+    <h1 class="header"><a href="#home">Marco Polo</a></h1>
         <button class="tablink nav-link" data-target ="home" href="#home">Home</button>
         <button class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</button>
         <button class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</button>
@@ -21,7 +21,7 @@
                 <i class="fas fa-search"></i>
             </a>
         </div>
-        <footer class="homePageFooter">
+        <footer class="footer">
             <p><a href="#home">Home</a></p>
             <p><a href="#event-map">Map of Events</a></p>
             <p><a href="#event-add">Add an Event</a></p>
@@ -29,15 +29,16 @@
         </footer>
     </div>
     <div class="page" id="event-map">
-        <h1 class="header">Marco Polo</h1>
+        <h1 class="header"><a href="#home">Marco Polo</a></h1>
         <button class="tablink nav-link" data-target ="home" href="#home">Home</button>
         <button class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</button>
         <button class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</button>
         <button class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</button>
-        <footer class="homePageFooter">
+        <footer class="footer">
         <div class="map">
             <h2>Map of Events</h2>
         </div>
+        <footer class="footer">
             <p><a href="#home">Home</a></p>
             <p><a href="#event-map">Map of Events</a></p>
             <p><a href="#event-add">Add an Event</a></p>
@@ -45,27 +46,55 @@
         </footer>
     </div>
     <div class="page" id="event-add">
-        <h1 class="header">Marco Polo</h1>
+        <h1 class="header"><a href="#home">Marco Polo</a></h1>
         <button class="tablink nav-link" data-target ="home" href="#home">Home</button>
         <button class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</button>
         <button class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</button>
         <button class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</button>
-        <footer class="homePageFooter">
+        <footer class="footer">
         <div class="addEventForm">
             <h2>Add an Event</h2>
-            <form class="addform" action="/action_page.php">
-                <input type="text" id="fname" name="firstname" placeholder="First Name">
-                <input type="text" id="lname" name="lastname" placeholder="Last Name">
-                <input type="text" id="ename" name="nameofevent" placeholder="Name of Event">
-                <input type="text" id="oname" name="organizationname" placeholder="Organization Name">
-                <input type="text" id="date" name="startdate" placeholder="Start Date of Event">
-                <input type="text" id="time" name="timeofevent" placeholder="Time of Event">
-                <input type="text" id="location" name="locationofevent" placeholder="Location of Event">
-                <input type="text" id="email" name="emailaddress" placeholder="E-mail Address">
-                <input type="text" id="number" name="phonenumber" placeholder="Contact Number">
+            <form class="addform" action="https://formspree.io/xgeypedl" method="POST">
+                <label>
+                    First Name:
+                    <input type="text" id="fname" name="firstname" placeholder="First Name">
+                </label>
+                <label>
+                    Last Name:
+                    <input type="text" id="lname" name="lastname" placeholder="Last Name">
+                </label>
+                <label>
+                    Name of Event:
+                    <input type="text" id="ename" name="nameofevent" placeholder="Name of Event">
+                </label>
+                <label>
+                    Name of Organization:
+                    <input type="text" id="oname" name="organizationname" placeholder="Organization Name">
+                </label>
+                <label>
+                    Date of Event:
+                    <input type="text" id="date" name="startdate" placeholder="Start Date of Event">
+                </label>
+                <label>
+                    Time of Event:
+                    <input type="text" id="time" name="timeofevent" placeholder="Time of Event">
+                </label>
+                <label>
+                    Location of Event:
+                    <input type="text" id="location" name="locationofevent" placeholder="Location of Event">
+                </label>
+                <label>
+                    E-mail Address:
+                    <input type="email" id="email" name="emailaddress" placeholder="E-mail Address">
+                </label>
+                <label>
+                    Contact Number:
+                    <input type="tel" id="number" name="phonenumber" placeholder="Contact Number">
+                </label>
+                <input type="submit" id="submit" placeholder="Submit">
             </form>
         </div>
-
+        <footer class="footer">
             <p><a href="#home">Home</a></p>
             <p><a href="#event-map">Map of Events</a></p>
             <p><a href="#event-add">Add an Event</a></p>
@@ -73,7 +102,7 @@
         </footer>
     </div>
     <div class="page" id="about-contact">
-        <h1 class="header">Marco Polo</h1>
+        <h1 class="header"><a href="#home">Marco Polo</a></h1>
         <button class="tablink nav-link" data-target ="home" href="#home">Home</button>
         <button class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</button>
         <button class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</button>
@@ -83,20 +112,28 @@
             <p>This website began as a capstone project for a brand new developer who aspires to grow in their role as a front-end web developer.</p>
             <h2>Contact</h2>
             <div class="contact">
-                <form action="/action_page.php">
-                    <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="First Name">
-                    <label for="lname">Last Name</label>
+                <form action="https://formspree.io/xgeypedl" method="POST">
+                    <label>
+                        First Name:
+                        <input type="text" id="fname" name="firstname" placeholder="First Name">
+                    </label>
+                    <label>
+                        Last Name:
                     <input type="text" id="lname" name="lastname" placeholder="Last Name">
-                    <label for="email">E-mail Address</label>
-                    <input type="text" id="email" name="email" placeholder="E-mail Address">
-                    <label for="message">Message</label>
-                    <input type="text" id="message" name="message" placeholder="A Brief Message...">
-                    <button id="submit">Submit</button>
+                </label>
+                <label>
+                    E-mail Address:
+                    <input type="email" id="email" name="email" placeholder="E-mail Address">
+                </label>
+                <label>
+                    Write Your Message Here:
+                    <textarea name="msg" id="msg" cols="40" rows="5" placeholder="A Brief Message..."></textarea>
+                </label>
+                    <input type="submit" id="submit" placeholder="Submit">
                 </form>
             </div>
         </div>
-        <footer class="homePageFooter">
+        <footer class="footer">
             <p><a href="#home">Home</a></p>
             <p><a href="#event-map">Map of Events</a></p>
             <p><a href="#event-add">Add an Event</a></p>
@@ -105,7 +142,5 @@
     </div>
     </main>
 <script src="marcopolo.js"></script>
-<!-- <script src="home-page.js"></script>
-<script src="event-map-page.js"></script> -->
 </body>
 </html>
