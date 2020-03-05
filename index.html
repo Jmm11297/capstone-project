@@ -5,16 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <title>Marco Polo</title>
 </head>
 <body>
     <div class="page active" id="home">
     <h1 class="header"><a href="#home">Marco Polo</a></h1>
-        <button class="tablink nav-link" data-target ="home" href="#home">Home</button>
-        <button class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</button>
-        <button class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</button>
-        <button class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</button>
-        <img id="homePageImage1" src="https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260">
+    <a class="hamburgerIcon" href="#">
+        <i class="fas fa-bars"></i>
+        <ul class="tab-list">
+            <li class="tablink nav-link" data-target ="home" href="#home">Home</li>
+            <li class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</li>
+            <li class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</li>
+            <li class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</li>
+        </ul>
+    </a>
+        <img id="homePageImage1" src="https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260">   
         <div class="search-box">
             <input class="search-txt" type="text" name="" placeholder="Type to Search">
             <a class="search-btn" href="#">
@@ -30,10 +36,15 @@
     </div>
     <div class="page" id="event-map">
         <h1 class="header"><a href="#home">Marco Polo</a></h1>
-        <button class="tablink nav-link" data-target ="home" href="#home">Home</button>
-        <button class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</button>
-        <button class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</button>
-        <button class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</button>
+        <a class="hamburgerIcon" href="#">
+            <i class="fas fa-bars"></i>
+            <ul class="tab-list">
+                <li class="tablink nav-link" data-target ="home" href="#home">Home</li>
+                <li class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</li>
+                <li class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</li>
+                <li class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</li>
+            </ul>
+        </a>   
         <footer class="footer">
         <div class="map">
             <h2>Map of Events</h2>
@@ -47,10 +58,15 @@
     </div>
     <div class="page" id="event-add">
         <h1 class="header"><a href="#home">Marco Polo</a></h1>
-        <button class="tablink nav-link" data-target ="home" href="#home">Home</button>
-        <button class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</button>
-        <button class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</button>
-        <button class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</button>
+        <a class="hamburgerIcon" href="#">
+            <i class="fas fa-bars"></i>
+            <ul class="tab-list">
+                <li class="tablink nav-link" data-target ="home" href="#home">Home</li>
+                <li class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</li>
+                <li class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</li>
+                <li class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</li>
+            </ul>
+        </a>
         <footer class="footer">
         <div class="addEventForm">
             <h2>Add an Event</h2>
@@ -105,35 +121,42 @@
     </div>
     <div class="page" id="about-contact">
         <h1 class="header"><a href="#home">Marco Polo</a></h1>
-        <button class="tablink nav-link" data-target ="home" href="#home">Home</button>
-        <button class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</button>
-        <button class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</button>
-        <button class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</button>
-        <div class="contactForm">
+        <a class="hamburgerIcon" href="#">
+            <i class="fas fa-bars"></i>
+            <ul class="tab-list">
+                <li class="tablink nav-link" data-target ="home" href="#home">Home</li>
+                <li class="tablink nav-link" data-target ="event-map" href="#event-map">Map of Events</li>
+                <li class="tablink nav-link" data-target ="event-add" href="#event-add">Add an Event</li>
+                <li class="tablink nav-link" data-target ="about-contact" href="#about-contact">About/Contact</li>
+            </ul>
+        </a>
+        <div class="about">
             <h2>About</h2>
-            <p>This website began as a capstone project for a brand new developer who aspires to grow in their role as a front-end web developer.</p>
+            <p>This website began as a capstone project for a brand new developer who aspires to grow in their role and gain experience as a front-end web developer.</p>
+        </div>
+        <div class="contactForm">
             <h2>Contact</h2>
-            <div class="contact">
-                <form action="https://formspree.io/xgeypedl" method="POST">
-                    <label>
-                        First Name:
-                        <input type="text" id="fname" name="firstname" placeholder="First Name">
-                    </label>
-                    <label>
-                        Last Name:
+            <form class="contact" action="https://formspree.io/xgeypedl" method="POST">
+                <div>
+                    <label>First Name:</label>
+                    <input type="text" id="fname" name="firstname" placeholder="First Name">
+                </div>
+                <div>
+                    <label>Last Name:</label>
                     <input type="text" id="lname" name="lastname" placeholder="Last Name">
-                </label>
-                <label>
-                    E-mail Address:
+                </div>
+                <div>
+                    <label>E-mail Address:</label>
                     <input type="email" id="email" name="email" placeholder="E-mail Address">
-                </label>
-                <label>
-                    Write Your Message Here:
+                </div>
+                <div>
+                    <label>Write Your Message Here:</label>
                     <textarea name="msg" id="msg" cols="40" rows="5" placeholder="A Brief Message..."></textarea>
-                </label>
+                </div>
+                <div>
                     <input type="submit" id="submit" placeholder="Submit">
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
         <footer class="footer">
             <p><a href="#home">Home</a></p>

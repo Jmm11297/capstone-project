@@ -20,32 +20,46 @@ body {
     padding: 0px;
     margin: 0px;
 }
+
 .active {
     display: block;
 }
+
 #home {
     background-color: rgb(168, 122, 139)
 }
+
 #event-map {
     background-color: #8a688a;
 }
+
 #event-add {
     background-color: rgb(88, 75, 110);
 }
+
 #about-contact {
     background-color: rgb(104, 69, 82);
 }
 
-.tablink {
+.tab-list {
+    padding-inline-start: 0px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 0px;
+}
+
+a > ul > li {
     background-color: rgb(124, 97, 173);
     color: white;
-    float: left;
     border: none;
     outline: none;
     cursor: auto;
-    padding: 14px 0px;
+    padding: 16px 0px;
     font-size: 17px;
     width: 25%;
+    list-style-type: none;
+    text-decoration: none;
 }
 
 .tablink:hover {
@@ -65,8 +79,12 @@ body {
     width: 240px;
     padding: 0 6px;
 }
+
+.fa-search {
+    color: rgb(255, 255, 255);
+}
+
 .search-btn {
-    color: ivory;
     float: right;
     width: 40px;
     height: 40px;
@@ -75,6 +93,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 }
 .search-txt {
     border: none;
@@ -89,12 +108,12 @@ body {
     width: 0px;
 }
 #homePageImage1 {
-    height: 90%;
-    width: 84.5rem;
+    height: 100%;
+    width: 100%;
     margin: 0px;
     padding: 0px;
-    float: inline-start;
     position: static;
+    background-image: url(https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
 }
 
 .footer > p > a:link, a:active, a:visited {
@@ -114,7 +133,16 @@ body {
 .addEventForm > h2 {
     text-align: left;
     font-size: 32px;
+    padding: 5px;
     font-family: Candara, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(223, 176, 230);
+}
+
+.about > h2, p {
+    text-align: left;
+    font-size: 32px;
+    font-family: Candara, Georgia, Times, 'Times New Roman', serif;
+    padding: 5px;
     color: rgb(223, 176, 230);
 }
 
@@ -124,23 +152,34 @@ form.addform > div {
     align-items: flex-start;
     flex: wrap;
     justify-content: space-between;
+    padding: 15px 5px;
     font-size: 24px;
     color: rgb(223, 176, 230);
 }
 
-.contact {
+.contactForm > h2 {
+    text-align: left;
+    font-size: 32px;
+    padding-left: 5px;
+    font-family: Candara, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(223, 176, 230);
+}
+
+form.contact > div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    align-content: center;
-    justify-content: space-around;
+    flex: wrap;
+    justify-content: space-between;
+    padding: 15px 5px;
+    font-size: 24px;
+    color: rgb(223, 176, 230);
 }
 
 #submit {
-    background-color: rgb(58, 56, 56);
+    background-color: rgb(105, 105, 105);
     color: rgb(255, 255, 255);
     margin: auto;
     padding: 16px 24px;
     border: 2px;
-
 }

@@ -42,3 +42,18 @@ const app = {
 }
 
 document.addEventListener('DOMContentLoaded', app.init);
+
+@media (min-width: 500px){
+    .hamburgerIcon > .fa-bars {
+        display: none;
+    }
+}
+
+@media (max-width: 500px){
+.hamburgerIcon > .tab-list {
+    display: none;
+}
+
+document.querySelector(".fa-bars").addEventListener("click", () => {
+    document.querySelector("a > ul").classList.toggle("tab-list")
+});
