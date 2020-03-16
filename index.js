@@ -29,3 +29,5 @@ function render() {
 };
 
 render();
+
+import * as state from "./store";
