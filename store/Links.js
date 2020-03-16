@@ -1,1 +1,1 @@
-export default ["Home", "Map", "EventForm", "Contact"];
+export default ["Home", "Map", "Add", "Contact"];

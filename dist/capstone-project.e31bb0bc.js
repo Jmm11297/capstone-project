@@ -98,9 +98,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
     // RequireJS
     } else if (typeof define === "function" && define.amd) {
-     define(function () {
-       return mainExports;
-     });
+    define(function () {
+      return mainExports;
+    });
 
     // <script>
     } else if (globalName) {
@@ -118,7 +118,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"components/Header.js":[function(require,module,exports) {
+"use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _default = function _default(st) {
+  return "";
+};
+
+exports.default = _default;
 },{}],"components/Nav.js":[function(require,module,exports) {
 "use strict";
 
@@ -127,8 +138,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _default = function _default() {
-  return "<nav>\n        <div class=\"logo\">\n            <h4>Marco Polo</h4>\n        </div>\n        <ul class=\"nav-links\">\n            <li class=\"link-tag\">\n                <a href=\"#\">Home</a>\n            </li>\n            <li class=\"link-tag\">\n                <a href=\"#\">Map</a>\n            </li>\n            <li class=\"link-tag\">\n                <a href=\"#\">Add</a>\n            </li>\n            <li class=\"link-tag\">\n                <a href=\"#\">About/Contact</a>\n            </li>\n        </ul>\n        <div class=\"burger\">\n            <div class=\"line1\"></div>\n            <div class=\"line2\"></div>\n            <div class=\"line3\"></div>\n        </div>\n    </nav>";
+var _default = function _default(links) {
+  return "<nav>\n        <div class=\"logo\">\n            <h4>Marco Polo</h4>\n        </div>\n        <ul class=\"nav-links\">\n            ".concat(links.map(function (link) {
+    return "<li><a href=\"#\">".concat(link, "</a></li>");
+  }).join(), "\n        </ul>\n        <div class=\"burger\">\n            <div class=\"line1\"></div>\n            <div class=\"line2\"></div>\n            <div class=\"line3\"></div>\n        </div>\n    </nav>");
 };
 
 exports.default = _default;
@@ -141,13 +154,24 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "<img id=\"homePageImage1\" src=\"https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260\">   \n<div class=\"search-box\">\n    <input class=\"search-txt\" type=\"text\" name=\"\" placeholder=\"Type to Search\">\n    <a class=\"search-btn\" href=\"#\">\n        <i class=\"fas fa-search\"></i>\n    </a>\n</div>";
+  return "\n<img id=\"homePageImage1\" src=\"https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260\">   \n<div class=\"search-box\">\n    <input class=\"search-txt\" type=\"text\" name=\"\" placeholder=\"Type to Search\">\n    <a class=\"search-btn\" href=\"#\">\n        <i class=\"fas fa-search\"></i>\n    </a>\n</div>";
 };
 
 exports.default = _default;
 },{}],"components/views/Map.js":[function(require,module,exports) {
+"use strict";
 
-},{}],"components/views/EventForm.js":[function(require,module,exports) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _default = function _default() {
+  return "";
+};
+
+exports.default = _default;
+},{}],"components/views/Add.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -191,10 +215,10 @@ Object.defineProperty(exports, "Map", {
     return _Map.default;
   }
 });
-Object.defineProperty(exports, "EventForm", {
+Object.defineProperty(exports, "Add", {
   enumerable: true,
   get: function () {
-    return _EventForm.default;
+    return _Add.default;
   }
 });
 Object.defineProperty(exports, "Contact", {
@@ -208,13 +232,18 @@ var _Home = _interopRequireDefault(require("./Home"));
 
 var _Map = _interopRequireDefault(require("./Map"));
 
-var _EventForm = _interopRequireDefault(require("./EventForm"));
+var _Add = _interopRequireDefault(require("./Add"));
 
 var _Contact = _interopRequireDefault(require("./Contact"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Home":"components/views/Home.js","./Map":"components/views/Map.js","./EventForm":"components/views/EventForm.js","./Contact":"components/views/Contact.js"}],"components/Main.js":[function(require,module,exports) {
+},{"./Home":"components/views/Home.js","./Map":"components/views/Map.js","./Add":"components/views/Add.js","./Contact":"components/views/Contact.js"}],"components/Main.js":[function(require,module,exports) {
 "use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
 var views = _interopRequireWildcard(require("./views"));
 
@@ -222,8 +251,14 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function render() {
-  document.querySelector("#root").innerHTML = "\n    ".concat(views.Home(), "\n    ").concat(views.Map(), "\n    ").concat(views.EventForm(), "\n    ").concat(views.Contact());
+var _default = function _default(st) {
+  return "".concat(views[st.view](st));
+};
+
+exports.default = _default;
+
+function render(st) {
+  document.querySelector("#root").innerHTML = "\n    ".concat(views.Home());
 }
 
 ;
@@ -305,7 +340,7 @@ var _default = {
   view: "Map"
 };
 exports.default = _default;
-},{}],"store/EventForm.js":[function(require,module,exports) {
+},{}],"store/Add.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -336,7 +371,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _default = ["Home", "Map", "EventForm", "Contact"];
+var _default = ["Home", "Map", "Add", "Contact"];
 exports.default = _default;
 },{}],"store/index.js":[function(require,module,exports) {
 "use strict";
@@ -359,7 +394,7 @@ Object.defineProperty(exports, "Map", {
 Object.defineProperty(exports, "EventForm", {
   enumerable: true,
   get: function () {
-    return _EventForm.default;
+    return _Add.default;
   }
 });
 Object.defineProperty(exports, "Contact", {
@@ -379,14 +414,14 @@ var _Home = _interopRequireDefault(require("./Home"));
 
 var _Map = _interopRequireDefault(require("./Map"));
 
-var _EventForm = _interopRequireDefault(require("./EventForm"));
+var _Add = _interopRequireDefault(require("./Add"));
 
 var _Contact = _interopRequireDefault(require("./Contact"));
 
 var _Links = _interopRequireDefault(require("./Links"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Home":"store/Home.js","./Map":"store/Map.js","./EventForm":"store/EventForm.js","./Contact":"store/Contact.js","./Links":"store/Links.js"}],"index.js":[function(require,module,exports) {
+},{"./Home":"store/Home.js","./Map":"store/Map.js","./Add":"store/Add.js","./Contact":"store/Contact.js","./Links":"store/Links.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var components = _interopRequireWildcard(require("./components"));
@@ -425,6 +460,23 @@ function render() {
 
 ;
 render();
+
+function render(st) {
+  document.querySelector("#root").innerHTML = "\n    ".concat(Home(st), "\n    ").concat(Nav(state.Links), "\n    ").concat(Main(st), "\n    ").concat(Footer(), "\n    ");
+}
+
+render(state.Home);
+
+function addNavEventListeners() {
+  document.querySelectorAll("nav > ul > a").forEach(function (link) {
+    return link.addEventListener("click", function (event) {
+      event.preventDefault;
+    }, render(state[event.target.textContent]));
+  });
+}
+
+;
+render(state.Home, addNavEventListeners());
 },{"./components":"components/index.js","./store":"store/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -453,7 +505,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56937" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51716" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

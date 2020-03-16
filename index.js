@@ -31,3 +31,23 @@ function render() {
 render();
 
 import * as state from "./store";
+
+function render(st) {
+    document.querySelector("#root").innerHTML = `
+    ${Home(st)}
+    ${Nav(state.Links)}
+    ${Main(st)}
+    ${Footer()}
+    `;
+}
+
+render(state.Home);
+
+function addNavEventListeners() {
+    document.querySelectorAll("nav > ul > a")
+    .forEach(link => link.addEventListener("click", event =>
+    {event.preventDefault},
+    render(state[event.target.textContent])))
+};
+
+render(state.Home, addNavEventListeners());

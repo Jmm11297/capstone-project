@@ -2,9 +2,9 @@ import * as views from "./views";
 
 export default st => `${views[st.view](st)}`;
 
-function render() {
+function render(st) {
     document.querySelector("#root").innerHTML = `
-    ${views.Home()}`
+    ${views.Home()}`;
 };
 
 render();

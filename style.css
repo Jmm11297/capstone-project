@@ -135,12 +135,8 @@ nav {
 .toggle .line3 {
     transform: rotate(45deg translate(-5px, 6px));
 }
-/* main {
-    margin-left: 5rem;
-    padding: 1rem;
-}
 
-.navbar {
+/* .navbar {
     width: 5rem;
     height: 100vh;
     position: fixed;
@@ -222,9 +218,9 @@ body::-webkit-scrollbar-thumb {
 
 #about-contact {
     background-color: rgb(104, 69, 82);
-}
+} */
 
-.tab-list {
+/* .tab-list {
     padding-inline-start: 0px;
     display: flex;
     flex-direction: row;
@@ -247,7 +243,7 @@ a > ul > li {
 
 .tablink:hover {
     background-color: rgb(81, 26, 184);
-}
+} */
 .search-box {
     position: fixed;
     top: 50%;
@@ -360,4 +356,4 @@ form.contact > div {
     margin: auto;
     padding: 16px 24px;
     border: 2px;
-} */
+}
