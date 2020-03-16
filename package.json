@@ -2,7 +2,8 @@
   "name": "savvy-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js", 
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "parcel-build": "parcel build index.html && cp _redirects ./dist/",
     "serve": "parcel index.html"

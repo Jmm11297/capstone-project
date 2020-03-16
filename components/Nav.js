@@ -1,4 +1,5 @@
-export default links => `<nav>
+export default links => `
+    <nav>
         <div class="logo">
             <h4>Marco Polo</h4>
         </div>

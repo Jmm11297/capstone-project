@@ -98,9 +98,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
     // RequireJS
     } else if (typeof define === "function" && define.amd) {
-    define(function () {
-      return mainExports;
-    });
+     define(function () {
+       return mainExports;
+     });
 
     // <script>
     } else if (globalName) {
@@ -117,7 +117,112 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"components/Header.js":[function(require,module,exports) {
+})({"store/Home.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: "Home Page",
+  view: "Home"
+};
+exports.default = _default;
+},{}],"store/Map.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: "Map of Events",
+  view: "Map"
+};
+exports.default = _default;
+},{}],"store/Add.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: "Event Form",
+  view: "EventForm"
+};
+exports.default = _default;
+},{}],"store/Contact.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: "Contact Page",
+  view: "Contact"
+};
+exports.default = _default;
+},{}],"store/Links.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = ["Home", "Map", "Add", "Contact"];
+exports.default = _default;
+},{}],"store/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Home", {
+  enumerable: true,
+  get: function () {
+    return _Home.default;
+  }
+});
+Object.defineProperty(exports, "Map", {
+  enumerable: true,
+  get: function () {
+    return _Map.default;
+  }
+});
+Object.defineProperty(exports, "EventForm", {
+  enumerable: true,
+  get: function () {
+    return _Add.default;
+  }
+});
+Object.defineProperty(exports, "Contact", {
+  enumerable: true,
+  get: function () {
+    return _Contact.default;
+  }
+});
+Object.defineProperty(exports, "Links", {
+  enumerable: true,
+  get: function () {
+    return _Links.default;
+  }
+});
+
+var _Home = _interopRequireDefault(require("./Home"));
+
+var _Map = _interopRequireDefault(require("./Map"));
+
+var _Add = _interopRequireDefault(require("./Add"));
+
+var _Contact = _interopRequireDefault(require("./Contact"));
+
+var _Links = _interopRequireDefault(require("./Links"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./Home":"store/Home.js","./Map":"store/Map.js","./Add":"store/Add.js","./Contact":"store/Contact.js","./Links":"store/Links.js"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -139,7 +244,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default(links) {
-  return "<nav>\n        <div class=\"logo\">\n            <h4>Marco Polo</h4>\n        </div>\n        <ul class=\"nav-links\">\n            ".concat(links.map(function (link) {
+  return "\n    <nav>\n        <div class=\"logo\">\n            <h4>Marco Polo</h4>\n        </div>\n        <ul class=\"nav-links\">\n            ".concat(links.map(function (link) {
     return "<li><a href=\"#\">".concat(link, "</a></li>");
   }).join(), "\n        </ul>\n        <div class=\"burger\">\n            <div class=\"line1\"></div>\n            <div class=\"line2\"></div>\n            <div class=\"line3\"></div>\n        </div>\n    </nav>");
 };
@@ -316,128 +421,23 @@ var _Main = _interopRequireDefault(require("./Main"));
 var _Footer = _interopRequireDefault(require("./Footer"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Header":"components/Header.js","./Nav":"components/Nav.js","./Main":"components/Main.js","./Footer":"components/Footer.js"}],"store/Home.js":[function(require,module,exports) {
+},{"./Header":"components/Header.js","./Nav":"components/Nav.js","./Main":"components/Main.js","./Footer":"components/Footer.js"}],"index.js":[function(require,module,exports) {
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  header: "Home Page",
-  view: "Home"
-};
-exports.default = _default;
-},{}],"store/Map.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  header: "Map of Events",
-  view: "Map"
-};
-exports.default = _default;
-},{}],"store/Add.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  header: "Event Form",
-  view: "EventForm"
-};
-exports.default = _default;
-},{}],"store/Contact.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  header: "Contact Page",
-  view: "Contact"
-};
-exports.default = _default;
-},{}],"store/Links.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = ["Home", "Map", "Add", "Contact"];
-exports.default = _default;
-},{}],"store/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Home", {
-  enumerable: true,
-  get: function () {
-    return _Home.default;
-  }
-});
-Object.defineProperty(exports, "Map", {
-  enumerable: true,
-  get: function () {
-    return _Map.default;
-  }
-});
-Object.defineProperty(exports, "EventForm", {
-  enumerable: true,
-  get: function () {
-    return _Add.default;
-  }
-});
-Object.defineProperty(exports, "Contact", {
-  enumerable: true,
-  get: function () {
-    return _Contact.default;
-  }
-});
-Object.defineProperty(exports, "Links", {
-  enumerable: true,
-  get: function () {
-    return _Links.default;
-  }
-});
-
-var _Home = _interopRequireDefault(require("./Home"));
-
-var _Map = _interopRequireDefault(require("./Map"));
-
-var _Add = _interopRequireDefault(require("./Add"));
-
-var _Contact = _interopRequireDefault(require("./Contact"));
-
-var _Links = _interopRequireDefault(require("./Links"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Home":"store/Home.js","./Map":"store/Map.js","./Add":"store/Add.js","./Contact":"store/Contact.js","./Links":"store/Links.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-var components = _interopRequireWildcard(require("./components"));
 
 var state = _interopRequireWildcard(require("./store"));
+
+var components = _interopRequireWildcard(require("./components"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function navSlide() {
-  var burger = document.querySelector('.burger');
-  var nav = document.querySelector('nav.nav-links');
-  var navLinks = document.querySelector('nav.nav-links.link-tag');
+  var burger = document.querySelector('nav > div.burger');
+  var nav = document.querySelector('nav > ul.nav-links');
+  var navLinks = document.querySelector('nav > ul.nav-links > li.link-tag');
   burger.addEventListener('click', function () {
-    nav.classList.toggle("nav > ul");
+    nav.classList.toggle("nav > ul.nav-links");
   });
   console.log(navLinks);
   navLinks.forEach(function (link, index) {
@@ -468,7 +468,7 @@ function render(st) {
 render(state.Home);
 
 function addNavEventListeners() {
-  document.querySelectorAll("nav > ul > a").forEach(function (link) {
+  document.querySelectorAll("nav > ul.nav-links > li").forEach(function (link) {
     return link.addEventListener("click", function (event) {
       event.preventDefault;
     }, render(state[event.target.textContent]));
@@ -477,7 +477,7 @@ function addNavEventListeners() {
 
 ;
 render(state.Home, addNavEventListeners());
-},{"./components":"components/index.js","./store":"store/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./store":"store/index.js","./components":"components/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -505,7 +505,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51716" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54844" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

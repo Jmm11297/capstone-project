@@ -1,10 +1,13 @@
+import * as state from "./store";
+import * as components from "./components";
+
 function navSlide() {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('nav.nav-links');
-    const navLinks = document.querySelector('nav.nav-links.link-tag');
+    const burger = document.querySelector('nav > div.burger');
+    const nav = document.querySelector('nav > ul.nav-links');
+    const navLinks = document.querySelector('nav > ul.nav-links > li.link-tag');
     
     burger.addEventListener('click', () => {
-        nav.classList.toggle("nav > ul");
+        nav.classList.toggle("nav > ul.nav-links");
     });
     console.log(navLinks);
     navLinks.forEach((link, index) => {
@@ -18,8 +21,6 @@ function navSlide() {
 
 navSlide();
 
-import * as components from "./components";
-
 function render() {
     document.querySelector("#root").innerHTML = `
     ${components.Header()}
@@ -29,8 +30,6 @@ function render() {
 };
 
 render();
-
-import * as state from "./store";
 
 function render(st) {
     document.querySelector("#root").innerHTML = `
@@ -44,7 +43,7 @@ function render(st) {
 render(state.Home);
 
 function addNavEventListeners() {
-    document.querySelectorAll("nav > ul > a")
+    document.querySelectorAll("nav > ul.nav-links > li")
     .forEach(link => link.addEventListener("click", event =>
     {event.preventDefault},
     render(state[event.target.textContent])))
