@@ -1,4 +1,4 @@
-import {Home, Map, Add, Contact, Links} from "./store";
+import * as state from "./store";
 import {Header, Nav, Main, Footer} from "./components";
 
 function navSlide() {
@@ -7,7 +7,7 @@ function navSlide() {
     const navLinks = document.querySelector('nav > ul.nav-links > li.link-tag');
     
     burger.forEach(bite => bite.addEventListener('click', () => {
-        nav.classList.toggle("nav > ul.nav-links");
+        nav.classList.toggle("nav > ul.nav-links > li.link-tag");
     }));
 
     console.log(navLinks);
@@ -20,10 +20,8 @@ function navSlide() {
     })
 };
 
-navSlide();
-
 function render() {
-    document.querySelector("#root").innerHTML = `
+    document.getElementById("root").innerHTML = `
     ${components.Header()}
     ${components.Nav()}
     ${components.Main()}
@@ -32,23 +30,24 @@ function render() {
 
 render();
 
+function addNavEventListeners() {
+    document.getElementsById("nav-links")
+    .forEach(link => link
+    .addEventListener("click", event =>
+    {event.preventDefault()},
+    render(state[event.target.textContent])))
+};
+
 function render(st) {
-    document.querySelector("#root").innerHTML = `
-    ${Home(state)}
+    document.getElementById("root").innerHTML = `
+    ${Home(st)}
     ${Nav(state.Links)}
-    ${Main(state)}
+    ${Main(st)}
     ${Footer()}
     `;
 
     addNavEventListeners();
 }
 
-function addNavEventListeners() {
-    document.getElementsById("nav-links")
-    .forEach(link => link
-    .addEventListener("click", event =>
-    {event.preventDefault},
-    render(state[event.target.textContent])))
-};
-
-render();
+navSlide();
+render(state);

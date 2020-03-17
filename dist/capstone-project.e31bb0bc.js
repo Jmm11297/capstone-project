@@ -250,8 +250,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _default = function _default(links) {
-  return "\n    <nav>\n        <div class=\"logo\">\n            <h4>Marco Polo</h4>\n        </div>\n        <ul id=\"nav-links\">\n            ".concat(links.map(function (link) {
+var _default = function _default(st) {
+  return "\n    <nav>\n        <div class=\"logo\">\n            <h4>Marco Polo</h4>\n        </div>\n        <ul id=\"nav-links\">\n            ".concat(st.map(function (link) {
     return "<li><a href=\"#\" aria-label=".concat(link.text, ">").concat(link.title, "</a></li>");
   }).join(''), "\n        </ul>\n        <div class=\"burger\">\n            <div class=\"line1\"></div>\n            <div class=\"line2\"></div>\n            <div class=\"line3\"></div>\n        </div>\n    </nav>");
 };
@@ -370,7 +370,7 @@ var _default = function _default(st) {
 exports.default = _default;
 
 function render(st) {
-  document.querySelector("#root").innerHTML = "\n    ".concat(views.Home());
+  document.getElementById("root").innerHTML = "\n    ".concat(views.Home());
 }
 
 ;
@@ -431,9 +431,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 },{"./Header":"components/Header.js","./Nav":"components/Nav.js","./Main":"components/Main.js","./Footer":"components/Footer.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
-var _store = require("./store");
+var state = _interopRequireWildcard(require("./store"));
 
 var _components = require("./components");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function navSlide() {
   var burger = document.querySelector('nav > div.burger');
@@ -441,7 +445,7 @@ function navSlide() {
   var navLinks = document.querySelector('nav > ul.nav-links > li.link-tag');
   burger.forEach(function (bite) {
     return bite.addEventListener('click', function () {
-      nav.classList.toggle("nav > ul.nav-links");
+      nav.classList.toggle("nav > ul.nav-links > li.link-tag");
     });
   });
   console.log(navLinks);
@@ -457,30 +461,31 @@ function navSlide() {
 }
 
 ;
-navSlide();
 
 function render() {
-  document.querySelector("#root").innerHTML = "\n    ".concat(components.Header(), "\n    ").concat(components.Nav(), "\n    ").concat(components.Main(), "\n    ").concat(components.Footer());
+  document.getElementById("root").innerHTML = "\n    ".concat(components.Header(), "\n    ").concat(components.Nav(), "\n    ").concat(components.Main(), "\n    ").concat(components.Footer());
 }
 
 ;
 render();
 
-function render(st) {
-  document.querySelector("#root").innerHTML = "\n    ".concat((0, _store.Home)(state), "\n    ").concat((0, _components.Nav)(state.Links), "\n    ").concat((0, _components.Main)(state), "\n    ").concat((0, _components.Footer)(), "\n    ");
-  addNavEventListeners();
-}
-
 function addNavEventListeners() {
   document.getElementsById("nav-links").forEach(function (link) {
     return link.addEventListener("click", function (event) {
-      event.preventDefault;
+      event.preventDefault();
     }, render(state[event.target.textContent]));
   });
 }
 
 ;
-render();
+
+function render(st) {
+  document.getElementById("root").innerHTML = "\n    ".concat(Home(st), "\n    ").concat((0, _components.Nav)(state.Links), "\n    ").concat((0, _components.Main)(st), "\n    ").concat((0, _components.Footer)(), "\n    ");
+  addNavEventListeners();
+}
+
+navSlide();
+render(state);
 },{"./store":"store/index.js","./components":"components/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
