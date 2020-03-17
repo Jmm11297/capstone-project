@@ -172,14 +172,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
-var _ref;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var _default = [(_ref = {
+var _default = [{
   title: "Home"
-}, _defineProperty(_ref, "title", "Map"), _defineProperty(_ref, "title", "Add"), _defineProperty(_ref, "title", "Contact"), _ref)];
+}, {
+  title: "Map"
+}, {
+  title: "Add"
+}, {
+  title: "Contact"
+}];
 exports.default = _default;
 },{}],"store/index.js":[function(require,module,exports) {
 "use strict";
@@ -238,7 +239,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default(st) {
-  return "";
+  return "<h1>test</h1>";
 };
 
 exports.default = _default;
@@ -368,13 +369,6 @@ var _default = function _default(st) {
 };
 
 exports.default = _default;
-
-function render(st) {
-  document.getElementById("root").innerHTML = "\n    ".concat(views.Home());
-}
-
-;
-render();
 },{"./views":"components/views/index.js"}],"components/Footer.js":[function(require,module,exports) {
 "use strict";
 
@@ -439,12 +433,15 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+console.log(state);
+
 function navSlide() {
-  var burger = document.querySelector('nav > div.burger');
-  var nav = document.querySelector('nav > ul.nav-links');
-  var navLinks = document.querySelector('nav > ul.nav-links > li.link-tag');
+  var burger = document.querySelectorAll("nav > div.burger > div");
+  console.log(burger);
+  var nav = document.querySelector("nav > ul.nav-links");
+  var navLinks = document.querySelectorAll("nav > ul#nav-links > li");
   burger.forEach(function (bite) {
-    return bite.addEventListener('click', function () {
+    return bite.addEventListener("click", function () {
       nav.classList.toggle("nav > ul.nav-links > li.link-tag");
     });
   });
@@ -453,39 +450,30 @@ function navSlide() {
     console.log(link);
 
     if (link.style.animation) {
-      link.style.animation = '';
+      link.style.animation = "";
     } else {
-      link.style.animation = 'navLinkFade 0.5s ease forwards ${index / 7 + 1.5}s';
+      link.style.animation = "navLinkFade 0.5s ease forwards ${index / 7 + 1.5}s";
     }
   });
 }
 
-;
-
-function render() {
-  document.getElementById("root").innerHTML = "\n    ".concat(components.Header(), "\n    ").concat(components.Nav(), "\n    ").concat(components.Main(), "\n    ").concat(components.Footer());
-}
-
-;
-render();
-
 function addNavEventListeners() {
-  document.getElementsById("nav-links").forEach(function (link) {
+  document.querySelectorAll("nav-links").forEach(function (link) {
     return link.addEventListener("click", function (event) {
       event.preventDefault();
     }, render(state[event.target.textContent]));
   });
 }
 
-;
-
-function render(st) {
-  document.getElementById("root").innerHTML = "\n    ".concat(Home(st), "\n    ").concat((0, _components.Nav)(state.Links), "\n    ").concat((0, _components.Main)(st), "\n    ").concat((0, _components.Footer)(), "\n    ");
+function render() {
+  var st = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : state.Home;
+  document.getElementById("root").innerHTML = "\n    ".concat((0, _components.Header)(st), "\n    ").concat((0, _components.Nav)(state.Links), "\n    ").concat((0, _components.Main)(st), "\n    ").concat((0, _components.Footer)(), "\n    ");
+  console.log(st);
   addNavEventListeners();
+  navSlide();
 }
 
-navSlide();
-render(state);
+render();
 },{"./store":"store/index.js","./components":"components/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -514,7 +502,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55659" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64387" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
