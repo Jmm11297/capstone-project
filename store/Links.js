@@ -1,6 +1,6 @@
 export default [
-{   title: "Home", 
-    title: "Map",
-    title: "Add",
-    title: "Contact"}
+{title: "Home", text:"Home" }, 
+    {title: "Map", text:"Map"},
+    {title: "Add", text:"Add"},
+    {title: "Contact", text:"Contact"}
 ];
