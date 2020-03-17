@@ -1,1 +1,1 @@
-export default st => ``;
+export default st => `<h1>test</h1>`;

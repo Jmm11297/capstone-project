@@ -1,6 +1,8 @@
 import * as state from "./store";
 import {Header, Nav, Main, Footer} from "./components";
 
+console.log(state)
+
 function navSlide() {
     const burger = document.querySelector('nav > div.burger');
     const nav = document.querySelector('nav > ul.nav-links');
@@ -20,15 +22,6 @@ function navSlide() {
     })
 };
 
-function render() {
-    document.getElementById("root").innerHTML = `
-    ${components.Header()}
-    ${components.Nav()}
-    ${components.Main()}
-    ${components.Footer()}`;
-};
-
-render();
 
 function addNavEventListeners() {
     document.getElementsById("nav-links")
@@ -38,16 +31,17 @@ function addNavEventListeners() {
     render(state[event.target.textContent])))
 };
 
-function render(st) {
+function render(st = state.Home) {
     document.getElementById("root").innerHTML = `
-    ${Home(st)}
+    ${Header(st)}
     ${Nav(state.Links)}
     ${Main(st)}
     ${Footer()}
     `;
+    console.log(st)
 
     addNavEventListeners();
+    navSlide();
 }
 
-navSlide();
-render(state);
+render();
