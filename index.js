@@ -1,14 +1,15 @@
-import * as state from "./store";
-import * as components from "./components";
+import {Home, Map, Add, Contact, Links} from "./store";
+import {Header, Nav, Main, Footer} from "./components";
 
 function navSlide() {
     const burger = document.querySelector('nav > div.burger');
     const nav = document.querySelector('nav > ul.nav-links');
     const navLinks = document.querySelector('nav > ul.nav-links > li.link-tag');
     
-    burger.addEventListener('click', () => {
+    burger.forEach(bite => bite.addEventListener('click', () => {
         nav.classList.toggle("nav > ul.nav-links");
-    });
+    }));
+
     console.log(navLinks);
     navLinks.forEach((link, index) => {
         console.log(link);
@@ -33,20 +34,21 @@ render();
 
 function render(st) {
     document.querySelector("#root").innerHTML = `
-    ${Home(st)}
+    ${Home(state)}
     ${Nav(state.Links)}
-    ${Main(st)}
+    ${Main(state)}
     ${Footer()}
     `;
+
+    addNavEventListeners();
 }
 
-render(state.Home);
-
 function addNavEventListeners() {
-    document.querySelectorAll("nav > ul.nav-links > li")
-    .forEach(link => link.addEventListener("click", event =>
+    document.getElementsById("nav-links")
+    .forEach(link => link
+    .addEventListener("click", event =>
     {event.preventDefault},
     render(state[event.target.textContent])))
 };
 
-render(state.Home, addNavEventListeners());
+render();

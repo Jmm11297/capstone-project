@@ -1,1 +1,6 @@
-export default ["Home", "Map", "Add", "Contact"];
+export default [
+{   title: "Home", 
+    title: "Map",
+    title: "Add",
+    title: "Contact"}
+];
