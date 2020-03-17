@@ -1,4 +1,4 @@
-export default st => `
+export default st =>`
     <nav>
         <div class="logo">
             <h4>Marco Polo</h4>
