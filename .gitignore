@@ -3,6 +3,7 @@
 dist
 node_modules
 *.sw*
+dist/*
 dist/capstone-project.e31bb0bc.js
 dist/capstone-project.e31bb0bc.js.map
 dist/style.e308ff8e.css
