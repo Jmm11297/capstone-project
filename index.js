@@ -6,12 +6,12 @@ console.log(state);
 function navSlide() {
   const burger = document.querySelectorAll("nav > div.burger > div");
   console.log(burger);
-  const nav = document.querySelector("nav > ul.nav-links");
+  const nav = document.querySelector("nav > ul#nav-links");
   const navLinks = document.querySelectorAll("nav > ul#nav-links > li");
 
-  burger.forEach(bite =>
-    bite.addEventListener("click", () => {
-      nav.classList.toggle("nav > ul.nav-links > li.link-tag");
+  burger.forEach(link =>
+    link.addEventListener("click", () => {
+      nav.classList.toggle("nav > ul#nav-links > li");
     })
   );
 

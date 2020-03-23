@@ -150,7 +150,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _default = {
   header: "Event Form",
-  view: "EventForm"
+  view: "Add"
 };
 exports.default = _default;
 },{}],"store/Contact.js":[function(require,module,exports) {
@@ -239,7 +239,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default(st) {
-  return "<h1>test</h1>";
+  return "";
 };
 
 exports.default = _default;
@@ -267,7 +267,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "\n<img id=\"homePageImage1\" src=\"https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260\">   \n<div class=\"search-box\">\n    <input class=\"search-txt\" type=\"text\" name=\"\" placeholder=\"Type to Search\">\n    <a class=\"search-btn\" href=\"#\">\n        <i class=\"fas fa-search\"></i>\n    </a>\n</div>";
+  return "\n<section id=\"home\">\n    <img id=\"homePageImage1\" src=\"https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260\">   \n        <div class=\"search-box\">\n            <input class=\"search-txt\" type=\"text\" name=\"\" placeholder=\"Type to Search\">\n            <a class=\"search-btn\" href=\"#\">\n                <i class=\"fas fa-search\"></i>\n            </a>\n        </div>\n</section>";
 };
 
 exports.default = _default;
@@ -280,7 +280,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "";
+  return "\n<section id=\"map\">\n</section>\n";
 };
 
 exports.default = _default;
@@ -293,7 +293,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "\n<div class=\"addEventForm\">\n    <h2>Add an Event</h2>\n    <form class=\"addform\" action=\"https://formspree.io/xgeypedl\" method=\"POST\"> -->\n        <div>\n            <label>First Name:</label>\n            <input type=\"text\" id=\"fname\" name=\"firstname\" placeholder=\"First Name\">\n        </div>\n        <div>\n            <label>Last Name:</label>\n            <input type=\"text\" id=\"lname\" name=\"lastname\" placeholder=\"Last Name\">\n        </div>\n        <div>\n            <label>Name of Event:</label>\n            <input type=\"text\" id=\"ename\" name=\"nameofevent\" placeholder=\"Name of Event\">\n        </div>\n        <div>\n            <label>Name of Organization:</label>\n            <input type=\"text\" id=\"oname\" name=\"organizationname\" placeholder=\"Organization Name\">\n        </div>\n        <div>\n            <label>Date of Event:</label>\n            <input type=\"text\" id=\"date\" name=\"startdate\" placeholder=\"Start Date of Event\">\n        </div>\n        <div>\n            <label>Time of Event:</label>\n            <input type=\"text\" id=\"time\" name=\"timeofevent\" placeholder=\"Time of Event\">\n        </div>\n        <div>\n            <label>Location of Event:</label>\n            <input type=\"text\" id=\"location\" name=\"locationofevent\" placeholder=\"Location of Event\">\n        </div>\n        <div>\n            <label>E-mail Address:</label>\n            <input type=\"email\" id=\"email\" name=\"emailaddress\" placeholder=\"E-mail Address\">\n        </div>\n        <div>\n            <label>Contact Number:</label>\n            <input type=\"tel\" id=\"number\" name=\"phonenumber\" placeholder=\"Contact Number\">\n        </div>\n        <div>\n            <input type=\"submit\" id=\"submit\" placeholder=\"Submit\">\n        </div>\n    </form>\n</div>";
+  return "\n<section id=\"add\">\n    <div class=\"addEventForm\">\n        <h2>Add an Event</h2>\n        <form class=\"addform\" action=\"https://formspree.io/xgeypedl\" method=\"POST\"> -->\n            <div>\n                <label>First Name:</label>\n                <input type=\"text\" id=\"fname\" name=\"firstname\" placeholder=\"First Name\">\n            </div>\n            <div>\n                <label>Last Name:</label>\n                <input type=\"text\" id=\"lname\" name=\"lastname\" placeholder=\"Last Name\">\n            </div>\n            <div>\n                <label>Name of Event:</label>\n                <input type=\"text\" id=\"ename\" name=\"nameofevent\" placeholder=\"Name of Event\">\n            </div>\n            <div>\n                <label>Name of Organization:</label>\n                <input type=\"text\" id=\"oname\" name=\"organizationname\" placeholder=\"Organization Name\">\n            </div>\n            <div>\n                <label>Date of Event:</label>\n                <input type=\"text\" id=\"date\" name=\"startdate\" placeholder=\"Start Date of Event\">\n            </div>\n            <div>\n                <label>Time of Event:</label>\n                <input type=\"text\" id=\"time\" name=\"timeofevent\" placeholder=\"Time of Event\">\n            </div>\n            <div>\n                <label>Location of Event:</label>\n                <input type=\"text\" id=\"location\" name=\"locationofevent\" placeholder=\"Location of Event\">\n            </div>\n            <div>\n                <label>E-mail Address:</label>\n                <input type=\"email\" id=\"email\" name=\"emailaddress\" placeholder=\"E-mail Address\">\n            </div>\n            <div>\n                <label>Contact Number:</label>\n                <input type=\"tel\" id=\"number\" name=\"phonenumber\" placeholder=\"Contact Number\">\n            </div>\n            <div>\n                <input type=\"submit\" id=\"submit\" placeholder=\"Submit\">\n            </div>\n        </form>\n    </div>\n</section>";
 };
 
 exports.default = _default;
@@ -306,7 +306,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "\n<div class=\"about\">\n    <h2>About</h2>\n    <p>This website began as a capstone project for a brand new developer who aspires to grow in their role and gain experience as a front-end web developer.</p>\n</div>       \n<div class=\"contactForm\">\n    <h2>Contact</h2>\n    <form class=\"contact\" action=\"https://formspree.io/xgeypedl\" method=\"POST\">\n        <div>\n            <label>First Name:</label>\n            <input type=\"text\" id=\"fname\" name=\"firstname\" placeholder=\"First Name\">\n        </div>\n        <div>\n            <label>Last Name:</label>\n            <input type=\"text\" id=\"lname\" name=\"lastname\" placeholder=\"Last Name\">\n        </div>\n        <div>\n            <label>E-mail Address:</label>\n            <input type=\"email\" id=\"email\" name=\"email\" placeholder=\"E-mail Address\">\n        </div>\n        <div>\n            <label>Write Your Message Here:</label>\n            <textarea name=\"msg\" id=\"msg\" cols=\"40\" rows=\"5\" placeholder=\"A Brief Message...\"></textarea>\n        </div>\n        <div>\n            <input type=\"submit\" id=\"submit\" placeholder=\"Submit\">\n        </div>\n    </form>";
+  return "\n<section id=\"contact\">\n    <div class=\"about\">\n        <h2>About</h2>\n        <p>This website began as a capstone project for a brand new developer who aspires to grow in their role and gain experience as a front-end web developer.</p>\n    </div>       \n    <div class=\"contactForm\">\n        <h2>Contact</h2>\n        <form class=\"contact\" action=\"https://formspree.io/xgeypedl\" method=\"POST\">\n            <div>\n                <label>First Name:</label>\n                <input type=\"text\" id=\"fname\" name=\"firstname\" placeholder=\"First Name\">\n            </div>\n            <div>\n                <label>Last Name:</label>\n                <input type=\"text\" id=\"lname\" name=\"lastname\" placeholder=\"Last Name\">\n            </div>\n            <div>\n                <label>E-mail Address:</label>\n                <input type=\"email\" id=\"email\" name=\"email\" placeholder=\"E-mail Address\">\n            </div>\n            <div>\n                <label>Write Your Message Here:</label>\n                <textarea name=\"msg\" id=\"msg\" cols=\"40\" rows=\"5\" placeholder=\"A Brief Message...\"></textarea>\n            </div>\n            <div>\n                <input type=\"submit\" id=\"submit\" placeholder=\"Submit\">\n            </div>\n        </form>\n    </div>\n</section>";
 };
 
 exports.default = _default;
@@ -438,11 +438,11 @@ console.log(state);
 function navSlide() {
   var burger = document.querySelectorAll("nav > div.burger > div");
   console.log(burger);
-  var nav = document.querySelector("nav > ul.nav-links");
+  var nav = document.querySelector("nav > ul#nav-links");
   var navLinks = document.querySelectorAll("nav > ul#nav-links > li");
-  burger.forEach(function (bite) {
-    return bite.addEventListener("click", function () {
-      nav.classList.toggle("nav > ul.nav-links > li.link-tag");
+  burger.forEach(function (link) {
+    return link.addEventListener("click", function () {
+      nav.classList.toggle("nav > ul#nav-links > li");
     });
   });
   console.log(navLinks);
@@ -502,7 +502,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64387" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52401" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
