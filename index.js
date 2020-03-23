@@ -27,6 +27,7 @@ function navSlide() {
   });
 }
 
+// making a change
 function addNavEventListeners() {
   document.querySelectorAll("nav-links").forEach(link =>
     link.addEventListener(
