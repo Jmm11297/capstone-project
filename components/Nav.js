@@ -3,10 +3,10 @@ import { Header } from ".";
 export default links => `
     <nav>
         <div class="logo">
-            <h4>Marco Polo</h4>
+            <h4>Clique Safe</h4>
         </div>
-        <ul id="nav-links">
-            ${links.map(link => `<li><a href="#" aria-label=${link.text}>${link.title}</a></li>`).join('')}
+        <ul class="hidden-mobile" id="nav-links">
+            ${links.map(link => `<li><a class="nav-clicks" href="#" aria-label=${link.text}>${link.title}</a></li>`).join('')}
         </ul>
         <div class="burger">
             <div class="line1"></div>

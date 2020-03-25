@@ -1,6 +1,6 @@
 import * as views from "./components/views";
-import { Header, Nav, Footer } from "./components";
-import * as stateStore from "./store";
+import { Header, Nav, Main, Footer } from "./components";
+import * as state from "./store";
 
 export class StateObserver {
     constructor(subject, stateContext) {
@@ -23,50 +23,31 @@ export class StateObserver {
         if (this.active == true) {
             document.querySelector("#root").innerHTML = `
                 ${Header(this.stateContext)}
-                ${Nav(stateStore.Links)}
+                ${Nav(state.Links)}
+                ${Main(this.stateContext)}
                 ${views[this.stateContext.view](this.stateContext)}
-                ${Footer()}
+                ${Footer(this.stateContext)}
             `;
 
-            //this.addNavEventListeners();
-            //this.addPicOnFormSubmit(this.stateContext);
+            this.addNavEventListeners();
         }
-    }
+    };
 
     addNavEventListeners() {
         // add event listeners to Nav items for navigation
-        document.querySelectorAll("nav a").forEach(navLink =>
-            navLink.addEventListener("click", event => {
+        // const navClick = document.querySelectorAll(".nav-clicks")
+        // console.log(navClick);
+        document.querySelectorAll(".nav-clicks").forEach(function(navLink)
+            {navLink.addEventListener("click", event => {
                 event.preventDefault();
-                this.subject.setState(stateStore[event.target.title]);
-            })
+                this.subject.setState(state[event.target.view]);
+            })}
         );
         // add menu toggle to bars icon in nav bar
         document
-            .querySelector("#burger")
-            .addEventListener("click", () =>
-                document.querySelector("nav > ul").classList.toggle("hidden--mobile")
-            );
+            .querySelector(".burger")
+            .addEventListener("click", event =>
+            {document.querySelector(".hidden-mobile").classList.toggle(".hidden--mobile")
+        });
     }
-
-    // addPicOnFormSubmit(st) {
-    //     if (st.view === "Form") {
-    //         document.querySelector("form").addEventListener("submit", event => {
-    //             event.preventDefault();
-    //             // convert HTML elements to Array
-    //             let inputList = Array.from(event.target.elements);
-    //             // remove submit button from list
-    //             inputList.pop();
-    //             // construct new picture object
-    //             let newPic = inputList.reduce((pictureObject, input) => {
-    //                 pictureObject[input.name] = input.value;
-    //                 return pictureObject;
-    //             }, {});
-    //             // add new picture to state.Gallery.pictures
-    //             state.Gallery.pictures.push(newPic);
-    //             render(state.Gallery);
-    //         });
-    //     }
-    // }
-
 }

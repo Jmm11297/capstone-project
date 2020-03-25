@@ -24,4 +24,4 @@ export class StateSubject{
     unregisterObserver(stateObserver){
         this.observables = this.observables.filter( obs => obs !== stateObserver);
     }
-}
+};

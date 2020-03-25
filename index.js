@@ -9,4 +9,4 @@ pages.push(new StateObserver(appState, state.Contact));
 pages.push(new StateObserver(appState, state.Map));
 pages.push(new StateObserver(appState, state.Home));
 
-appState.setState(state.Home);
+appState.setState(state.Home); 

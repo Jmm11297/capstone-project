@@ -173,13 +173,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _default = [{
-  title: "Home"
+  title: "Home",
+  text: "Home"
 }, {
-  title: "Map"
+  title: "Map",
+  text: "Map"
 }, {
-  title: "Add"
+  title: "Add",
+  text: "Add"
 }, {
-  title: "Contact"
+  title: "Contact",
+  text: "Contact"
 }];
 exports.default = _default;
 },{}],"store/index.js":[function(require,module,exports) {
@@ -230,34 +234,67 @@ var _Contact = _interopRequireDefault(require("./Contact"));
 var _Links = _interopRequireDefault(require("./Links"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Home":"store/Home.js","./Map":"store/Map.js","./Add":"store/Add.js","./Contact":"store/Contact.js","./Links":"store/Links.js"}],"components/Header.js":[function(require,module,exports) {
+},{"./Home":"store/Home.js","./Map":"store/Map.js","./Add":"store/Add.js","./Contact":"store/Contact.js","./Links":"store/Links.js"}],"StateSubject.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.StateSubject = void 0;
 
-var _default = function _default(st) {
-  return "";
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-exports.default = _default;
-},{}],"components/Nav.js":[function(require,module,exports) {
-"use strict";
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var _default = function _default(st) {
-  return "\n    <nav>\n        <div class=\"logo\">\n            <h4>Marco Polo</h4>\n        </div>\n        <ul id=\"nav-links\">\n            ".concat(st.map(function (link) {
-    return "<li><a href=\"#\" aria-label=".concat(link.text, ">").concat(link.title, "</a></li>");
-  }).join(''), "\n        </ul>\n        <div class=\"burger\">\n            <div class=\"line1\"></div>\n            <div class=\"line2\"></div>\n            <div class=\"line3\"></div>\n        </div>\n    </nav>");
-};
+var StateSubject =
+/*#__PURE__*/
+function () {
+  function StateSubject(state) {
+    _classCallCheck(this, StateSubject);
 
-exports.default = _default;
+    this.observables = [];
+    this.state = state;
+  }
+
+  _createClass(StateSubject, [{
+    key: "getState",
+    value: function getState() {
+      return this.state;
+    }
+  }, {
+    key: "setState",
+    value: function setState(state) {
+      this.state = state;
+      this.notifyObservers(this.state);
+    }
+  }, {
+    key: "notifyObservers",
+    value: function notifyObservers(state) {
+      this.observables.forEach(function (element) {
+        element.notify(state);
+      });
+    }
+  }, {
+    key: "registerObserver",
+    value: function registerObserver(stateObserver) {
+      this.observables.push(stateObserver);
+    }
+  }, {
+    key: "unregisterObserver",
+    value: function unregisterObserver(stateObserver) {
+      this.observables = this.observables.filter(function (obs) {
+        return obs !== stateObserver;
+      });
+    }
+  }]);
+
+  return StateSubject;
+}();
+
+exports.StateSubject = StateSubject;
+;
 },{}],"components/views/Home.js":[function(require,module,exports) {
 "use strict";
 
@@ -350,7 +387,37 @@ var _Add = _interopRequireDefault(require("./Add"));
 var _Contact = _interopRequireDefault(require("./Contact"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Home":"components/views/Home.js","./Map":"components/views/Map.js","./Add":"components/views/Add.js","./Contact":"components/views/Contact.js"}],"components/Main.js":[function(require,module,exports) {
+},{"./Home":"components/views/Home.js","./Map":"components/views/Map.js","./Add":"components/views/Add.js","./Contact":"components/views/Contact.js"}],"components/Header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _default = function _default(st) {
+  return "";
+};
+
+exports.default = _default;
+},{}],"components/Nav.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _ = require(".");
+
+var _default = function _default(links) {
+  return "\n    <nav>\n        <div class=\"logo\">\n            <h4>Clique Safe</h4>\n        </div>\n        <ul class=\"hidden-mobile\" id=\"nav-links\">\n            ".concat(links.map(function (link) {
+    return "<li><a class=\"nav-clicks\" href=\"#\" aria-label=".concat(link.text, ">").concat(link.title, "</a></li>");
+  }).join(''), "\n        </ul>\n        <div class=\"burger\">\n            <div class=\"line1\"></div>\n            <div class=\"line2\"></div>\n            <div class=\"line3\"></div>\n        </div>\n    </nav>");
+};
+
+exports.default = _default;
+},{".":"components/index.js"}],"components/Main.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -422,59 +489,108 @@ var _Main = _interopRequireDefault(require("./Main"));
 var _Footer = _interopRequireDefault(require("./Footer"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Header":"components/Header.js","./Nav":"components/Nav.js","./Main":"components/Main.js","./Footer":"components/Footer.js"}],"index.js":[function(require,module,exports) {
+},{"./Header":"components/Header.js","./Nav":"components/Nav.js","./Main":"components/Main.js","./Footer":"components/Footer.js"}],"StateObserver.js":[function(require,module,exports) {
 "use strict";
 
-var state = _interopRequireWildcard(require("./store"));
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.StateObserver = void 0;
+
+var views = _interopRequireWildcard(require("./components/views"));
 
 var _components = require("./components");
+
+var state = _interopRequireWildcard(require("./store"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-console.log(state);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function navSlide() {
-  var burger = document.querySelectorAll("nav > div.burger > div");
-  console.log(burger);
-  var nav = document.querySelector("nav > ul#nav-links");
-  var navLinks = document.querySelectorAll("nav > ul#nav-links > li");
-  burger.forEach(function (link) {
-    return link.addEventListener("click", function () {
-      nav.classList.toggle("nav > ul#nav-links > li");
-    });
-  });
-  console.log(navLinks);
-  navLinks.forEach(function (link, index) {
-    console.log(link);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-    if (link.style.animation) {
-      link.style.animation = "";
-    } else {
-      link.style.animation = "navLinkFade 0.5s ease forwards ${index / 7 + 1.5}s";
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var StateObserver =
+/*#__PURE__*/
+function () {
+  function StateObserver(subject, stateContext) {
+    _classCallCheck(this, StateObserver);
+
+    this.subject = subject;
+    this.stateContext = stateContext;
+    this.active = subject.state.view == stateContext.view;
+    subject.registerObserver(this);
+  }
+
+  _createClass(StateObserver, [{
+    key: "notify",
+    value: function notify(state) {
+      if (state.view == this.stateContext.view) {
+        this.active = true;
+      } else {
+        this.active = false;
+      }
+
+      this.render();
     }
-  });
-}
+  }, {
+    key: "render",
+    value: function render() {
+      if (this.active == true) {
+        document.querySelector("#root").innerHTML = "\n                ".concat((0, _components.Header)(this.stateContext), "\n                ").concat((0, _components.Nav)(state.Links), "\n                ").concat((0, _components.Main)(this.stateContext), "\n                ").concat(views[this.stateContext.view](this.stateContext), "\n                ").concat((0, _components.Footer)(this.stateContext), "\n            ");
+        this.addNavEventListeners();
+      }
+    }
+  }, {
+    key: "addNavEventListeners",
+    value: function addNavEventListeners() {
+      // add event listeners to Nav items for navigation
+      // const navClick = document.querySelectorAll(".nav-clicks")
+      // console.log(navClick);
+      document.querySelectorAll(".nav-clicks").forEach(function (navLink) {
+        var _this = this;
 
-function addNavEventListeners() {
-  document.querySelectorAll("nav-links").forEach(function (link) {
-    return link.addEventListener("click", function (event) {
-      event.preventDefault();
-    }, render(state[event.target.textContent]));
-  });
-}
+        navLink.addEventListener("click", function (event) {
+          event.preventDefault();
 
-function render() {
-  var st = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : state.Home;
-  document.getElementById("root").innerHTML = "\n    ".concat((0, _components.Header)(st), "\n    ").concat((0, _components.Nav)(state.Links), "\n    ").concat((0, _components.Main)(st), "\n    ").concat((0, _components.Footer)(), "\n    ");
-  console.log(st);
-  addNavEventListeners();
-  navSlide();
-}
+          _this.subject.setState(state[event.target.view]);
+        });
+      }); // add menu toggle to bars icon in nav bar
 
-render();
-},{"./store":"store/index.js","./components":"components/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+      document.querySelector(".burger").addEventListener("click", function (event) {
+        document.querySelector(".hidden-mobile").classList.toggle(".hidden--mobile");
+      });
+    }
+  }]);
+
+  return StateObserver;
+}();
+
+exports.StateObserver = StateObserver;
+},{"./components/views":"components/views/index.js","./components":"components/index.js","./store":"store/index.js"}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var state = _interopRequireWildcard(require("./store"));
+
+var _StateSubject = require("./StateSubject");
+
+var _StateObserver = require("./StateObserver");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var appState = new _StateSubject.StateSubject(state.Home);
+var pages = [];
+pages.push(new _StateObserver.StateObserver(appState, state.Add));
+pages.push(new _StateObserver.StateObserver(appState, state.Contact));
+pages.push(new _StateObserver.StateObserver(appState, state.Map));
+pages.push(new _StateObserver.StateObserver(appState, state.Home));
+appState.setState(state.Home);
+},{"./store":"store/index.js","./StateSubject":"StateSubject.js","./StateObserver":"StateObserver.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -502,7 +618,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52401" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64486" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
