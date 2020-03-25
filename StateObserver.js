@@ -28,7 +28,7 @@ export class StateObserver {
                 ${Footer()}
             `;
 
-            //this.addNavEventListeners();
+            this.addNavEventListeners();
             //this.addPicOnFormSubmit(this.stateContext);
         }
     }
