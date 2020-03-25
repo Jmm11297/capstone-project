@@ -35,13 +35,11 @@ export class StateObserver {
 
     addNavEventListeners() {
         // add event listeners to Nav items for navigation
-        // const navClick = document.querySelectorAll(".nav-clicks")
-        // console.log(navClick);
-        document.querySelectorAll(".nav-clicks").forEach(function(navLink)
-            {navLink.addEventListener("click", event => {
+        document.querySelectorAll("nav a").forEach(navLink =>
+            navLink.addEventListener("click", event => {
                 event.preventDefault();
-                this.subject.setState(state[event.target.view]);
-            })}
+                this.subject.setState(stateStore[event.target.title]);
+            })
         );
         // add menu toggle to bars icon in nav bar
         document

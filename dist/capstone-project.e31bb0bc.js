@@ -149,7 +149,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _default = {
-  header: "Event Form",
+  header: "Add",
   view: "Add"
 };
 exports.default = _default;
@@ -547,16 +547,14 @@ function () {
   }, {
     key: "addNavEventListeners",
     value: function addNavEventListeners() {
-      // add event listeners to Nav items for navigation
-      // const navClick = document.querySelectorAll(".nav-clicks")
-      // console.log(navClick);
-      document.querySelectorAll(".nav-clicks").forEach(function (navLink) {
-        var _this = this;
+      var _this = this;
 
-        navLink.addEventListener("click", function (event) {
+      // add event listeners to Nav items for navigation
+      document.querySelectorAll("nav a").forEach(function (navLink) {
+        return navLink.addEventListener("click", function (event) {
           event.preventDefault();
 
-          _this.subject.setState(state[event.target.view]);
+          _this.subject.setState(stateStore[event.target.title]);
         });
       }); // add menu toggle to bars icon in nav bar
 
