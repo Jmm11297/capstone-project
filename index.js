@@ -34,26 +34,35 @@ function render(st) {
     addNavEventListeners();
 }
 
-function navSlide() {
-    const burger = document.querySelector('nav > div.burger');
-    const nav = document.querySelector('nav > ul#nav-links');
-    const navLinks = nav.querySelectorAll('li');
-    
-    //const blines = [...burger];
-    console.log(`burger: ${burger}`);//\nblines: ${blines}`)
-    burger.addEventListener('click', () => {
-        nav.classList.toggle("nav>ul#nav-links>li");
-    });
+const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
-    console.log(navLinks);
-    //console.log([...navLinks]);
-    navLinks.forEach((link, index) => {
-        console.log(link);
-        if (link.style.animation) {
-            link.style.animation = '';
-        } else {link.style.animation = `navLinkFade 0.5s ease forwards ${(index/7+1.5)}s`;
-    }})
-};
+    
+    burger.addEventListener('click', () => {
+        // Nav toggles when burger is clicked
+        nav.classList.toggle('nav-active');
+        console.log("'BEEEEEEEEP' -HAMBURGER");
+
+        // Animate the links inside nav
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                // Equal delay as links pop up 
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 4 + 0.6}s`;
+            }
+        });
+
+        //Burger changes
+        burger.classList.toggle('toggle');
+    });
+}
+
+
+
+
+render(state.Home);
 
 navSlide();
-render(state.Home);
