@@ -1,6 +1,16 @@
 import * as state from "./store";
-//import {Header, Nav, Main, Footer} from "./components";
 import * as components from "./components";
+import Navigo from "navigo";
+import { capitalize } from "lodash";
+
+const router = new Navigo(window.location.origin);
+router.on("/", () => render(state.Home)).resolve()
+router.on({
+  "/": () => render(state.Home), 
+  ":page": params => {
+    let page = capitalize(params.page);
+    render(state[page]);
+  }});
 
 function indexRender(st) {
     const root = document.getElementById("root");
@@ -14,13 +24,13 @@ function indexRender(st) {
 
 indexRender(state.Home);
 
-function addNavEventListeners() {
-    document.getElementById("nav-links").addEventListener("click", event =>
-    {event.preventDefault();
-    render(state[event.target.textContent])});
-    //.forEach(link => link //Only One Element by Id multiple elements by class
+// function addNavEventListeners() {
+//     document.getElementById("nav-links").addEventListener("click", event =>
+//     {event.preventDefault();
+//     render(state[event.target.textContent])});
+//     //.forEach(link => link //Only One Element by Id multiple elements by class
     
-};
+// };
 
 function render(st) {
     const root = document.getElementById("root");
@@ -29,9 +39,10 @@ function render(st) {
     ${components.Nav(state.Links)}
     ${components.Main(st)}
     ${components.Footer()}
+    router.updatePageLinks();
     `;
     console.log(root.querySelector("nav"));
-    addNavEventListeners();
+    // addNavEventListeners();
 }
 
 const navSlide = () => {

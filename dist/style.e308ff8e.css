@@ -1,26 +1,3 @@
-/* @media (min-width: 500px){
-    .hamburgerIcon > .fa-bars {
-        display: none;
-    }
-}
-
-@media (max-width: 500px){
-.hamburgerIcon > .tab-list {
-    display: none;
-}
-} */
-
-/* :root {
-    font-family: 'Poiret One', cursive;
-    font-family: 'Dosis', sans-serif;
-    font-size: 16px;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    --text-primary: rgb(255, 255, 255);
-    --text-secondary: rgb(165, 165, 165);
-    --bg-primary: rgb(107, 34, 155);
-    --bg-secondary: rgb(170, 67, 238);
-} */
 
 * {
     margin: 0px;
@@ -45,18 +22,22 @@ nav {
     font-size: 20px;
 }
 
-#nav-links {
+.nav-links {
     display: flex;
     justify-content: space-around;
     width: 30%;
     align-items: center;
 }
 
-#nav-links li {
+#nav-links a {
+    color: rgb(221, 213, 213);
+}
+
+.nav-links li {
     list-style: none;
 }
 
-#nav-links a {
+.nav-links a {
     color: rgb(221, 213, 213);
     text-decoration: none;
     letter-spacing: 3px;
@@ -73,10 +54,11 @@ nav {
     height: 3px;
     background-color: rgb(221, 213, 213);
     margin: 5px;
+    transition: all 0.3s ease;
 }
 
 @media screen and (max-width:1024px) {
-    #nav-links {
+    .nav-links {
         display: flex;
         justify-content: space-around;
         width: 60%;
@@ -84,10 +66,12 @@ nav {
 }
 
 @media screen and (max-width:768px) {
+
     body {
         overflow-x: hidden;
     }
-    #nav-links {
+
+    .nav-links {
         position: absolute;
         right: 0px;
         height: 92vh;
@@ -97,20 +81,26 @@ nav {
         flex-direction: column;
         align-items: center;
         width: 40%;
-        transform: translate(100%);
-        transition: transform 1s ease-in;
+        transform: translateX(100%);
+        transition: transform 0.7s ease-in;
     }
-    #nav-links li {
-        opacity: 0;
+
+    .nav-links li {
+        opacity: 0; //this disappears them 
     }
+
     .burger {
         display: block;
     }
+    
+    
 }
 
 .nav-active {
-    transform: translate(0%);
+    transform: translateX(0%);
 }
+
+
 
 @keyframes navLinkFade {
     from {
@@ -123,8 +113,9 @@ nav {
     }
 }
 
+
 .toggle .line1 {
-    transform: rotate(-45deg, translate(-5px 6px));
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
 
 .toggle .line2 {
@@ -132,117 +123,9 @@ nav {
 }
 
 .toggle .line3 {
-    transform: rotate(45deg translate(-5px, 6px));
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* .navbar {
-    width: 5rem;
-    height: 100vh;
-    position: fixed;
-    background-color: var(--bg-primary);
-}
-
-.navbar > ul > li > a:link {
-    color: white;
-    text-decoration: none;
-
-}
-
-.tab-list {
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    height: 5rem;
-    color: var(--text-primary)
-    text-decoration: none;
-}
-
-
-
-body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    text-decoration: none;
-}
-
-body::-webkit-scrollbar {
-    width:0.5rem;
-}
-body::-webkit-scrollbar-track {
-    background: rgb(168, 122, 139)
-}
-body::-webkit-scrollbar-thumb {
-    background: rgb(61, 3, 78)
-}
-.page > .header > a {
-    font-size: 64px;
-    font-family: 'Poiret One', cursive;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
-.page {
-    display: none;
-    width: 100%;
-    min-height: 100%;
-    position: absolute;
-    padding: 0px;
-    margin: 0px;
-}
-
-.active {
-    display: block;
-}
-
-#home {
-    background-color: rgb(168, 122, 139)
-}
-
-#event-map {
-    background-color: #8a688a;
-}
-
-#event-add {
-    background-color: rgb(88, 75, 110);
-}
-
-#about-contact {
-    background-color: rgb(104, 69, 82);
-} */
-
-/* .tab-list {
-    padding-inline-start: 0px;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    margin: 0px;
-}
-
-a > ul > li {
-    background-color: rgb(124, 97, 173);
-    color: white;
-    border: none;
-    outline: none;
-    cursor: auto;
-    padding: 16px 0px;
-    font-size: 23px;
-    width: 25%;
-    list-style-type: none;
-    text-decoration: none;
-}
-
-.tablink:hover {
-    background-color: rgb(81, 26, 184);
-} */
 .search-box {
     position: fixed;
     top: 50%;
