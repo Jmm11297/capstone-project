@@ -1,4 +1,4 @@
 export default {
-    header: "Map of Events",
+    header: "Map",
     view: "Map"
 };

@@ -2,7 +2,7 @@ export default () => `
 <section id="add">
     <div class="addEventForm">
         <h2>Add an Event</h2>
-        <form class="addform" action="https://formspree.io/xgeypedl" method="POST"> -->
+        <form class="addform" action="https://formspree.io/xgeypedl" method="POST">
             <div>
                 <label>First Name:</label>
                 <input type="text" id="fname" name="firstname" placeholder="First Name">
