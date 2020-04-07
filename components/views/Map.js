@@ -5,7 +5,6 @@ export default () => `
     let map;
     document.addEventListener("DOMContentLoaded", () => {
         let s = document.createElement("script");
-        s.src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs";
         document.head.appendChild(s);
         s.addEventListener("load", () => {
             // script has loaded
@@ -19,6 +18,7 @@ export default () => `
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
         });
+        s.src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs";
     });
 </script>
 `;
