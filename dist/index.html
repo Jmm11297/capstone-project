@@ -55,24 +55,26 @@
 <body>
     <div id="root"></div>
 <script type="module" src="/capstone-project.e31bb0bc.js"></script>
-<script>var map;
-document.addEventListener("DOMContentLoaded", function () {
-  var s = document.createElement("script");
-  s.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs";
-  document.head.appendChild(s);
-  s.addEventListener("load", function () {
-    // script has loaded
-    console.log("script has loaded");
-    map = new google.maps.Map(document.getElementById("map"), {
-      center: {
-        lat: 38.6270,
-        lng: -90.1994
-      },
-      zoom: 16,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+<!-- <script>
+    let map;
+    document.addEventListener("DOMContentLoaded", () => {
+        let s = document.createElement("script");
+        s.src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs";
+        document.head.appendChild(s);
+        s.addEventListener("load", () => {
+            // script has loaded
+            console.log("script has loaded");
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat:38.6270,
+                    lng:-90.1994
+                },
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+        });
     });
-  });
-});</script>
+</script> -->
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXVlKtq--LY7srEUgNtUFfOte0zUpOhSY&callback=initMap" async defer></script> -->
 </body>
 </html>

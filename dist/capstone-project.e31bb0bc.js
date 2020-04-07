@@ -286,7 +286,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "\n<div id=\"map\">\n</div>\n";
+  return "\n<div id=\"map\">\n</div>\n<script>\n    let map;\n    document.addEventListener(\"DOMContentLoaded\", () => {\n        let s = document.createElement(\"script\");\n        s.src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs\";\n        document.head.appendChild(s);\n        s.addEventListener(\"load\", () => {\n            // script has loaded\n            console.log(\"script has loaded\");\n            map = new google.maps.Map(document.getElementById(\"map\"), {\n                center: {\n                    lat:38.6270,\n                    lng:-90.1994\n                },\n                zoom: 16,\n                mapTypeId: google.maps.MapTypeId.ROADMAP\n            });\n        });\n    });\n</script>\n";
 };
 
 exports.default = _default;
