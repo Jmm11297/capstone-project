@@ -48,32 +48,33 @@
         };
         };
     </script> -->
-    <script>
-        let map;
-        document.addEventListener("DOMContentLoaded", () => {
-            let s = document.createElement("script");
-            document.head.appendChild(s);
-            s.addEventListener("load", () => {
-                // script has loaded
-                console.log("script has loaded");
-                map = new google.maps.Map(document.getElementById("map"), {
-                    center: {
-                        lat:38.6270,
-                        lng:-90.1994
-                    },
-                    zoom: 16,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                });
-            });
-            s.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs`;
-        });
-    </script>
+    
     <title>Clique Safe</title>
     <meta name="google-site-verification" content="8n6dKz05JL0WZFiOmj1F-XcsM2fjGSDJ4ZKfAimlh5I" />
 </head>
 <body>
     <div id="root"></div>
 <script type="module" src="index.js"></script>
+<script>
+    let map;
+    document.addEventListener("DOMContentLoaded", () => {
+        let s = document.createElement("script");
+        document.head.appendChild(s);
+        s.addEventListener("load", () => {
+            // script has loaded
+            console.log("script has loaded");
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat:38.6270,
+                    lng:-90.1994
+                },
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+        });
+        s.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs";
+    });
+</script>
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXVlKtq--LY7srEUgNtUFfOte0zUpOhSY&callback=initMap" async defer></script> -->
 </body>
 </html>
