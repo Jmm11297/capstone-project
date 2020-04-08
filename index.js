@@ -1,15 +1,15 @@
 import * as state from "./store";
 import * as components from "./components";
-import Navigo from "navigo";
-import { capitalize } from "lodash";
-const router = new Navigo(window.location.origin);
+// import Navigo from "navigo";
+// import { capitalize } from "lodash";
+// const router = new Navigo(window.location.origin);
 // router.on("/", () => render(state.Home)).resolve();
-router.on({
-  "/": () => render(state.Home),
-  ":page": params => {
-    let page = capitalize(params.page);
-    render(state[page]);
-  }});
+// router.on({
+//   "/": () => render(state.Home),
+//   ":page": params => {
+//     let page = capitalize(params.page);
+//     render(state[page]);
+//   }});
 
 // function indexRender(st) {
 //     const root = document.getElementById("root");
@@ -30,7 +30,7 @@ function render(st) {
     ${components.Footer()}
     `;
     console.log(root.querySelector("nav"));
-    router.updatePageLinks();
+    // router.updatePageLinks();
     addNavEventListeners();
     navSlide();
 };

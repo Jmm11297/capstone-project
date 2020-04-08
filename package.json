@@ -24,8 +24,5 @@
     "stylelint-prettier": "^1.1.1",
     "stylelint-vscode": "^7.0.0-6"
   },
-  "dependencies": {
-    "lodash": "^4.17.15",
-    "navigo": "^7.1.2"
-  }
+  "dependencies": {}
 }
