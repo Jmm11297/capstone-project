@@ -8,6 +8,7 @@ export default () => `
         zoom: 17,
         mapTypeID: google.maps.mapTypeID.ROADMAP
     });
+    console.log("I work!");
     // geolocation
     let infoWindow = new google.maps.InfoWindow;
     // Try HTML5 geolocation.
