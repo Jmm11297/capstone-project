@@ -1,7 +1,6 @@
 export default () => `
 <div id="map">
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs&callback=initMap" async defer></script>
 <script>
     function initMap() {
         console.log("it works!");
@@ -42,4 +41,6 @@ export default () => `
         infoWindow.open(map);
     };
     };
-</script>`;
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs&callback=initMap"></script>
+`;
