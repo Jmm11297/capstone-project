@@ -1,15 +1,13 @@
 export default () => `
 <div id="map">
 </div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs"></script>
 <script>
-    function initMap() {
-        console.log("it works!");
-        let startPoint = {
+    let map = new google.maps.Map(document.getElementById("map"), {
         center: {lat:38.6270,lng:-90.1994},
         zoom: 17,
-        // mapTypeID: google.maps.mapTypeID.R
-    };
-    let map = new google.maps.Map(document.getElementById("map"), startPoint);
+        mapTypeID: google.maps.mapTypeID.ROADMAP
+    });
     // geolocation
     let infoWindow = new google.maps.InfoWindow;
     // Try HTML5 geolocation.
@@ -42,5 +40,4 @@ export default () => `
     };
     };
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs&callback=initMap"></script>
 `;
