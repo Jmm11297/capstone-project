@@ -286,7 +286,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "\n<div id=\"map\">\n</div>";
+  return "\n<div id=\"map\">\n</div>\n<script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs&callback=initMap\" async defer></script>\n<script>\n    function initMap() {\n        console.log(\"it works!\");\n        let startPoint = {\n        center: {lat:38.6270,lng:-90.1994},\n        zoom: 17,\n        // mapTypeID: google.maps.mapTypeID.R\n    };\n    let map = new google.maps.Map(document.getElementById(\"map\"), startPoint);\n    // geolocation\n    let infoWindow = new google.maps.InfoWindow;\n    // Try HTML5 geolocation.\n    if (navigator.geolocation) {\n        navigator.geolocation.getCurrentPosition(function(position) {\n            let pos = {\n                lat: position.coords.latitude,\n                lng: position.coords.longitude\n            };\n\n            infoWindow.setPosition(pos);\n            infoWindow.setContent('You are here!');\n            infoWindow.open(map);\n            map.setCenter(pos);\n        }, \n    function() {\n        handleLocationError(true, infoWindow, map.getCenter());\n    });\n    } else {\n    // Browser doesn't support Geolocation\n        handleLocationError(false, infoWindow, map.getCenter());\n    };\n\n    function handleLocationError(browserHasGeolocation, infoWindow, pos) {\n        infoWindow.setPosition(pos);\n        infoWindow.setContent(browserHasGeolocation ?\n            'Error: The Geolocation service failed.' :\n            'Error: Your browser doesn't support geolocation.');\n        infoWindow.open(map);\n    };\n    };\n</script>";
 };
 
 exports.default = _default;
