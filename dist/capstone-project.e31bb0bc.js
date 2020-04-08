@@ -259,7 +259,7 @@ var _ = require(".");
 
 var _default = function _default(links) {
   return "\n    <nav>\n        <div class=\"logo\">\n            <h4>Clique Safe</h4>\n        </div>\n        <ul class=\"nav-links\" id=\"nav-links\">\n            ".concat(links.map(function (link) {
-    return "<li><a href=\"/".concat(link.text, "\" data-navigo>").concat(link.title, "</a></li>");
+    return "<li><a href=\"#\">".concat(link.title, "</a></li>");
   }).join(), "\n        </ul>\n        <div class=\"burger\">\n            <div class=\"line1\"></div>\n            <div class=\"line2\"></div>\n            <div class=\"line3\"></div>\n        </div>\n    </nav>");
 };
 

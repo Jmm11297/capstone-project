@@ -8,7 +8,7 @@ export default links => `
         <ul class="nav-links" id="nav-links">
             ${links.map(
                 link =>
-                `<li><a href="/${link.text}" data-navigo>${link.title}</a></li>`
+                `<li><a href="#">${link.title}</a></li>`
               ).join()}
         </ul>
         <div class="burger">
