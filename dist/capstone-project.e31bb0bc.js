@@ -504,7 +504,7 @@ function navSlide() {
 render(state.Home);
 
 function addMap() {
-  var map = new google.maps.Map(document.getElementById("map"), {
+  var map = new google.maps.Map(document.getElementById("map1"), {
     center: {
       lat: 38.6270,
       lng: -90.1994

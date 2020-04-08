@@ -251,3 +251,8 @@ form.contact > div {
     justify-content: center;
     align-items: center;
 }
+
+#map1 {
+    height: 80vh;
+    width: 80vw;
+}

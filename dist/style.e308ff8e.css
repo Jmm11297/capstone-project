@@ -252,4 +252,9 @@ form.contact > div {
     align-items: center;
 }
 
+#map1 {
+    height: 80vh;
+    width: 80vw;
+}
+
 /*# sourceMappingURL=/style.e308ff8e.css.map */

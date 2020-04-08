@@ -67,7 +67,7 @@ function navSlide() {
 render(state.Home);
 
 function addMap() {
-    let map = new google.maps.Map(document.getElementById("map"), {
+    let map = new google.maps.Map(document.getElementById("map1"), {
         center: {lat:38.6270,lng:-90.1994},
         zoom: 17,
         mapTypeID: google.maps.mapTypeID.ROADMAP
