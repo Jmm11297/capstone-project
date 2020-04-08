@@ -1,7 +1,6 @@
 export default () => `
-<div id="map">
-</div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs"></script>
+<iframe id="map" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs" onerror="console.log("I work!")">
+</iframe>
 <script>
     let map = new google.maps.Map(document.getElementById("map"), {
         center: {lat:38.6270,lng:-90.1994},
