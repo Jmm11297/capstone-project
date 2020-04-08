@@ -1,5 +1,11 @@
 export default () => `
-<iframe id="map" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs" onerror="console.log("I work!")">
+<iframe 
+id="map"
+width="600"
+height="450"
+frameborder="0"
+style="border:0"
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs" onerror="console.log("I work!")">
 </iframe>
 <script>
     let map = new google.maps.Map(document.getElementById("map"), {
