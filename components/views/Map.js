@@ -1,4 +1,5 @@
 export default () => `
+<section id="mapPage">
 <iframe 
 id="map"
 width="600"
@@ -12,5 +13,6 @@ src="https://www.google.com/maps/embed/v1/place
 &maptype=roadmap">
 </iframe>
 <div id="map1"></div>
+</section>
 `;
 

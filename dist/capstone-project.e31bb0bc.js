@@ -141,6 +141,18 @@ var _default = {
   view: "Map"
 };
 exports.default = _default;
+},{}],"store/Events.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: "Events",
+  view: "Events"
+};
+exports.default = _default;
 },{}],"store/Add.js":[function(require,module,exports) {
 "use strict";
 
@@ -179,6 +191,9 @@ var _default = [{
   title: "Map",
   text: "Map"
 }, {
+  title: "Events",
+  text: "Events"
+}, {
   title: "Add",
   text: "Add"
 }, {
@@ -204,6 +219,12 @@ Object.defineProperty(exports, "Map", {
     return _Map.default;
   }
 });
+Object.defineProperty(exports, "Events", {
+  enumerable: true,
+  get: function () {
+    return _Events.default;
+  }
+});
 Object.defineProperty(exports, "Add", {
   enumerable: true,
   get: function () {
@@ -227,6 +248,8 @@ var _Home = _interopRequireDefault(require("./Home"));
 
 var _Map = _interopRequireDefault(require("./Map"));
 
+var _Events = _interopRequireDefault(require("./Events"));
+
 var _Add = _interopRequireDefault(require("./Add"));
 
 var _Contact = _interopRequireDefault(require("./Contact"));
@@ -234,7 +257,7 @@ var _Contact = _interopRequireDefault(require("./Contact"));
 var _Links = _interopRequireDefault(require("./Links"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Home":"store/Home.js","./Map":"store/Map.js","./Add":"store/Add.js","./Contact":"store/Contact.js","./Links":"store/Links.js"}],"components/Header.js":[function(require,module,exports) {
+},{"./Home":"store/Home.js","./Map":"store/Map.js","./Events":"store/Events.js","./Add":"store/Add.js","./Contact":"store/Contact.js","./Links":"store/Links.js"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -286,7 +309,20 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "\n<iframe \nid=\"map\"\nwidth=\"600\"\nheight=\"450\"\nframeborder=\"0\"\nstyle=\"border:0\"\nsrc=\"https://www.google.com/maps/embed/v1/place\n?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs\n&q=Gateway+Arch,St.Louis+Missouri\n&zoom=17\n&maptype=roadmap\">\n</iframe>\n<div id=\"map1\"></div>\n";
+  return "\n<section id=\"mapPage\">\n<iframe \nid=\"map\"\nwidth=\"600\"\nheight=\"450\"\nframeborder=\"0\"\nstyle=\"border:0\"\nsrc=\"https://www.google.com/maps/embed/v1/place\n?key=AIzaSyDq4b9XG8Yfue3vTu-UC7FWO0BLppYGPMs\n&q=Gateway+Arch,St.Louis+Missouri\n&zoom=17\n&maptype=roadmap\">\n</iframe>\n<div id=\"map1\"></div>\n</section>\n";
+};
+
+exports.default = _default;
+},{}],"components/views/Events.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _default = function _default() {
+  return "\n<section id=\"events\">\n    <h2>List of Events</h2>\n    <div class=\"searchForm\">\n        <form action=\"\" class=\"searchForm\"><!-- Add The Appropriate Action for Your Site's Search Form/Page -->\n            <label class=\"sr-only\" for=\"searchEvents\">Search Events</label>\n            <input id=\"searchEvents\" placeholder=\"Where are you going?\" type=\"search\">\n            <input type=\"submit\" value=\"Search\" placeholder=\"Search\">\n        </form>\n    </div>\n    <div class=\"tab-content\">\n        <sect class=\"row\">\n            <div class=\"col-md-6\">\n                <div class=\"media\">\n                    <a class=\"pull-left\" href=\"#\"><span class=\"dateEl\"><em>30</em>Jun</span></a>\n                <div class=\"media-body\">\n                <h4 class=\"media-heading\">\n                    <a href=\"#\">Pride STL</a>\n                </h4>\n                <div class=\"meta-data\">\n                    <span class=\"longDate\">Jun 30, 2020</span> <span class=\"timeEl\">12:00pm - 09:00pm</span>\n                </div>\n                <p>\n                    Celebrate being a part of and/or supporting the LGBTQ+ community!\n                </p>\n            </div><!-- / media-body -->\n        </div><!-- / media -->\n        <div class=\"media\">\n            <a class=\"pull-left\" href=\"#\"><span class=\"dateEl\"><em>11</em>Jul</span></a>\n            <div class=\"media-body\">\n                <h4 class=\"media-heading\">\n                    <a href=\"#\">Pagan Festival</a>\n                </h4>\n                <div class=\"meta-data\">\n                    <span class=\"longDate\">Jul 11, 2020</span> <span class=\"timeEl\">12:00pm - 07:30pm</span>\n                </div>\n                <p>\n                    Gather with others to celebrate and honor Pagan traditions.\n                </p>\n            </div><!-- / media-body -->\n        </div><!-- / media -->\n        <div class=\"media\">\n            <a class=\"pull-left\" href=\"#\"><span class=\"dateEl\"><em>15</em>Jul</span></a>\n            <div class=\"media-body\">\n                <h4 class=\"media-heading\">\n                    <a href=\"#\">Marketing for Large Businesses</a>\n                </h4>\n                <div class=\"meta-data\">\n                    <span class=\"longDate\">Jul 15, 2020</span> <span class=\"timeEl\">05:30pm - 07:30pm</span>\n                </div>\n                <p>\n                    Learn how larger organizations can effectively manager their marketing projects.\n                </p>\n            </div><!-- / media-body -->\n        </div><!-- / media -->\n        <div class=\"media\">\n            <a class=\"pull-left\" href=\"#\"><span class=\"dateEl\"><em>18</em>Aug</span></a>\n            <div class=\"media-body\">\n                <h4 class=\"media-heading\">\n                    <a href=\"#\">Programming 101</a>\n                </h4>\n                <div class=\"meta-data\">\n                    <span class=\"longDate\">Aug 18, 2020</span> <span class=\"timeEl\">06:00pm - 08:00pm</span>\n                </div>\n                <p>\n                    Take the basic CMS training class to see where things are and how to build custom modules.\n                </p>\n            </div><!-- / media-body -->\n        </div><!-- / media -->\n        <div class=\"media\">\n            <a class=\"pull-left\" href=\"#\"><span class=\"dateEl\"><em>21</em>Aug</span></a>\n            <div class=\"media-body\">\n                <h4 class=\"media-heading\">\n                    <a href=\"#\">Designing for Mobile</a>\n                </h4>\n                <div class=\"meta-data\">\n                    <span class=\"longDate\">Aug 21, 2020</span> <span class=\"timeEl\">10:00am - 12:00pm</span>\n                </div>\n                <p>\n                    Get tips and information regarding how to design websites for mobile devices.\n                </p>\n            </div><!-- / media-body -->\n        </div><!-- / media -->\n        <div class=\"media\">\n            <a class=\"pull-left\" href=\"#\"><span class=\"dateEl\"><em>21</em>Aug</span></a>\n            <div class=\"media-body\">\n                <h4 class=\"media-heading\">\n                    <a href=\"#\">Modern Support</a>\n                </h4>\n                <div class=\"meta-data\">\n                    <span class=\"longDate\">Aug 21, 2020</span> <span class=\"timeEl\">10:00am - 12:00pm</span>\n                </div>\n                <p>\n                    Learn from industry leaders about providing the best support possible.\n                </p>\n            </div><!-- / media-body -->\n        </div><!-- / media -->\n    </div>\n    <div class=\"text-center\">\n        <br>\n        <a class=\"btn btn-default\" href=\"#\">SEE ALL EVENTS</a>\n    </div>\n</section>\n";
 };
 
 exports.default = _default;
@@ -334,6 +370,12 @@ Object.defineProperty(exports, "Map", {
     return _Map.default;
   }
 });
+Object.defineProperty(exports, "Events", {
+  enumerable: true,
+  get: function () {
+    return _Events.default;
+  }
+});
 Object.defineProperty(exports, "Add", {
   enumerable: true,
   get: function () {
@@ -351,12 +393,14 @@ var _Home = _interopRequireDefault(require("./Home"));
 
 var _Map = _interopRequireDefault(require("./Map"));
 
+var _Events = _interopRequireDefault(require("./Events"));
+
 var _Add = _interopRequireDefault(require("./Add"));
 
 var _Contact = _interopRequireDefault(require("./Contact"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Home":"components/views/Home.js","./Map":"components/views/Map.js","./Add":"components/views/Add.js","./Contact":"components/views/Contact.js"}],"components/Main.js":[function(require,module,exports) {
+},{"./Home":"components/views/Home.js","./Map":"components/views/Map.js","./Events":"components/views/Events.js","./Add":"components/views/Add.js","./Contact":"components/views/Contact.js"}],"components/Main.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -384,7 +428,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default() {
-  return "<footer class=\"footer\">\n            <p><a href=\"#\">Home</a></p>\n            <p><a href=\"#\">Map of Events</a></p>\n            <p><a href=\"#\">Add an Event</a></p>\n            <p><a href=\"#\">About/Contact</a></p>\n        </footer>";
+  return "<footer class=\"footer\">\n            <p><a href=\"#\">Home</a></p>\n            <p><a href=\"#\">Map</a></p>\n            <p><a href=\"#\">Events</a></p>\n            <p><a href=\"#\">Add</a></p>\n            <p><a href=\"#\">Contact</a></p>\n        </footer>";
 };
 
 exports.default = _default;
@@ -521,7 +565,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59905" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51849" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

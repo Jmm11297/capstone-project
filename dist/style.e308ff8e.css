@@ -257,4 +257,132 @@ form.contact > div {
     width: 80vw;
 }
 
+.searchForm {
+    position: relative;
+}
+
+.searchForm input[type="search"] {
+    background: #fff;
+    border: 2px solid #959595;
+}
+
+#events > h2 {
+    text-align: left;
+    font-size: 32px;
+    margin: 20px;
+    padding: 5px;
+    color: rgb(223, 176, 230);
+}
+
+.searchForm input[type="search"] {
+    display: inline-block;
+    width: 100%;
+    max-width: 505px;
+    height: 52px;
+    margin: 25px;
+    padding: 11px 0 11px 20px;
+    font-size: 17px;
+    line-height: 19px;
+    color: #222;
+    font-style: normal;
+    background-color: #f1f1f1;
+    background-image: none;
+    border: 1px solid #8196a1;
+    border-radius: 0;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.searchForm input[type="submit"] {
+    font-size: 0;
+    color: transparent;
+    border: 0;
+    margin: 25px;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.tab-content {
+    margin: 50px 0 20px 0;
+}
+
+.tab-content > .row > .col-md-6 > .media {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px;
+}
+
+.tab-content > .row > .col-md-6 > .media > .media-body {
+    margin-left: 15px;
+}
+
+.tab-content > .row > .col-md-6 > .media > .media-body > .media-heading > a {
+    color: rgb(61, 3, 78);
+    text-decoration: none;
+}
+
+.tab-content > .row > .col-md-6 > .media > .media-body > .meta-data 
+
+.media > .pull-left {
+    margin-right: 29px;
+}
+.media .dateEl {
+    display: inline-block;
+    text-align: center;
+    background: #f9f9f9;
+    padding: 18px 0 25px 0;
+    color: #173d51;
+    font-size: 16px;
+    font-weight: 700;
+    width: 113px;
+    text-transform: uppercase;
+}
+.media .dateEl em {
+    display: block;
+    color: #662d91;
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 5px;
+    font-style: normal;
+}
+
+.media .media-heading a {
+    color: #022235;
+    font-size: 21px;
+    text-transform: uppercase;
+}
+.media .meta-data {
+    margin: 0 0 7px 0;
+}
+.media .longDate, .media .timeEl {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
+    color: #636465;
+    text-transform: uppercase;
+    min-height: 16px;
+}
+.media .longDate {
+    padding: 0 10px 0 24px;
+    border-right: 1px solid #eb5b4c;
+    margin-right: 3px;
+}
+#tab1.tab-pane .media .longDate {
+    border-right: none;
+}
+
+.btn-default {
+    color: #fff;
+    font-size: 20px;
+    background-color: #662d91;
+    border-radius : 0px;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
 /*# sourceMappingURL=/style.e308ff8e.css.map */
