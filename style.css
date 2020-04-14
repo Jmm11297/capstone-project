@@ -4,6 +4,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Poiret One', cursive;
+    background: rgb(105, 105, 105);
 }
 
 nav {
@@ -195,14 +196,14 @@ nav {
     text-align: left;
     font-size: 32px;
     padding: 5px;
-    color: rgb(223, 176, 230);
+    color: rgb(61, 3, 78);
 }
 
 .about > h2, p {
     text-align: left;
     font-size: 32px;
     padding: 5px;
-    color: rgb(223, 176, 230);
+    color: rgb(61, 3, 78);
 }
 
 form.addform > div {
@@ -213,14 +214,14 @@ form.addform > div {
     justify-content: space-between;
     padding: 15px 5px;
     font-size: 24px;
-    color: rgb(223, 176, 230);
+    color: rgb(61, 3, 78);
 }
 
 .contactForm > h2 {
     text-align: left;
     font-size: 32px;
     padding-left: 5px;
-    color: rgb(223, 176, 230);
+    color: rgb(61, 3, 78);
 }
 
 form.contact > div {
@@ -231,7 +232,7 @@ form.contact > div {
     justify-content: space-between;
     padding: 15px 5px;
     font-size: 24px;
-    color: rgb(223, 176, 230);
+    color: rgb(61, 3, 78);
 }
 
 #submit {
@@ -271,7 +272,7 @@ form.contact > div {
     font-size: 32px;
     margin: 20px;
     padding: 5px;
-    color: rgb(223, 176, 230);
+    color: rgb(61, 3, 78);
 }
 
 .searchForm input[type="search"] {
@@ -369,7 +370,6 @@ form.contact > div {
 }
 .media .longDate {
     padding: 0 10px 0 24px;
-    border-right: 1px solid #eb5b4c;
     margin-right: 3px;
 }
 #tab1.tab-pane .media .longDate {
