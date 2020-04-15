@@ -4,7 +4,12 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Poiret One', cursive;
-    background: rgb(105, 105, 105);
+    font-weight: 600;
+}
+
+.search-txt::placeholder {
+    color: white;
+    font-weight: 700;
 }
 
 nav {
@@ -20,6 +25,7 @@ nav {
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 20px;
+    font-weight: 700;
 }
 
 .nav-links {
@@ -41,7 +47,7 @@ nav {
     color: rgb(221, 213, 213);
     text-decoration: none;
     letter-spacing: 3px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .burger {
@@ -93,15 +99,11 @@ nav {
     .burger {
         display: block;
     }
-    
-    
 }
 
 .nav-active {
     transform: translateX(0%);
 }
-
-
 
 @keyframes navLinkFade {
     from {
@@ -125,6 +127,10 @@ nav {
 
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#root > section, footer {
+    background: rgb(255, 248, 233)
 }
 
 .search-box {
@@ -159,6 +165,7 @@ nav {
     text-decoration: none;
     margin-top: -10px;
 }
+
 .search-txt {
     border: none;
     background: none;
@@ -171,6 +178,7 @@ nav {
     line-height: 0px;
     width: 0px;
 }
+
 #homePageImage1 {
     height: 100%;
     width: 100%;
@@ -244,7 +252,6 @@ form.contact > div {
 }
 
 #map {
-    margin: 40px;
     height: 80vh;
     width: 80vw;
     border: 2px solid #333;
@@ -253,10 +260,6 @@ form.contact > div {
     align-items: center;
 }
 
-#map1 {
-    height: 80vh;
-    width: 80vw;
-}
 
 .searchForm {
     position: relative;
@@ -270,44 +273,8 @@ form.contact > div {
 #events > h2 {
     text-align: left;
     font-size: 32px;
-    margin: 20px;
     padding: 5px;
     color: rgb(61, 3, 78);
-}
-
-.searchForm input[type="search"] {
-    display: inline-block;
-    width: 100%;
-    max-width: 505px;
-    height: 52px;
-    margin: 25px;
-    padding: 11px 0 11px 20px;
-    font-size: 17px;
-    line-height: 19px;
-    color: #222;
-    font-style: normal;
-    background-color: #f1f1f1;
-    background-image: none;
-    border: 1px solid #8196a1;
-    border-radius: 0;
-    -webkit-transition: none;
-    transition: none;
-}
-
-.searchForm input[type="submit"] {
-    font-size: 0;
-    color: transparent;
-    border: 0;
-    margin: 25px;
-    width: 52px;
-    height: 52px;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.tab-content {
-    margin: 50px 0 20px 0;
 }
 
 .tab-content > .row > .col-md-6 > .media {
@@ -325,17 +292,21 @@ form.contact > div {
     text-decoration: none;
 }
 
-.tab-content > .row > .col-md-6 > .media > .media-body > .meta-data 
-
 .media > .pull-left {
     margin-right: 29px;
 }
+
+.media {
+    background: rgba(105, 105, 105, 0.123);
+    border: 4px rgb(255, 248, 233) solid;
+}
+
 .media .dateEl {
     display: inline-block;
     text-align: center;
-    background: #f9f9f9;
+    background: rgba(61, 3, 78, 0.5);
     padding: 18px 0 25px 0;
-    color: #173d51;
+    color: white;
     font-size: 16px;
     font-weight: 700;
     width: 113px;
@@ -364,7 +335,7 @@ form.contact > div {
     line-height: 14px;
     font-family: 'PT Sans Narrow', sans-serif;
     font-weight: 700;
-    color: #636465;
+    color: #646365;
     text-transform: uppercase;
     min-height: 16px;
 }
@@ -376,13 +347,52 @@ form.contact > div {
     border-right: none;
 }
 
-.btn-default {
+.text-center {
+    margin: 50px;
+    background: rgb(255, 248, 233);
+}
+
+.text-center .btn-default {
     color: #fff;
     font-size: 20px;
-    background-color: #662d91;
+    background-color: rgba(128, 52, 128, 0.801);
     border-radius : 0px;
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 15px 18px;
+}
+
+.event-search-box {
+    position: relative;
+    display: block;
+    margin-top: 30px;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(81, 26, 184, 0.548);
+    height: 40px;
+    width: 400px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.event-search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0 6px;
+    font-size: 18px;
+    transition: 0.4s;
+    line-height: 0px;
+    width: 240px;
+    color: white;
+    font-weight: 700;
+}
+
+.event-search-txt::placeholder {
+    color: white;
+    font-weight: 700;
 }
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */

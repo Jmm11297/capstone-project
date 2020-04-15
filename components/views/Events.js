@@ -1,12 +1,11 @@
 export default () => `
 <section id="events">
     <h2>List of Events</h2>
-    <div class="searchForm">
-        <form action="" class="searchForm"><!-- Add The Appropriate Action for Your Site's Search Form/Page -->
-            <label class="sr-only" for="searchEvents">Search Events</label>
-            <input id="searchEvents" placeholder="Where are you going?" type="search">
-            <input type="submit" value="Search" placeholder="Search">
-        </form>
+    <div class="event-search-box">
+        <input class="event-search-txt" type="text" placeholder="Where are you going?">
+        <a class="search-btn" href="#">
+            <i class="fas fa-search"></i>
+        </a>
     </div>
     <div class="tab-content">
         <sect class="row">
@@ -97,7 +96,7 @@ export default () => `
         </div><!-- / media -->
     </div>
     <div class="text-center">
-        <br>
+        
         <a class="btn btn-default" href="#">SEE ALL EVENTS</a>
     </div>
 </section>
